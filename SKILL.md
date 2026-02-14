@@ -80,12 +80,17 @@ python scripts/search_deser_endpoints.py /path/to/project report.md
 *   **fury**: `fury.deserialize`
 *   **fory**: `fory.deserialize`
 
-#### 1.3 Vulnerability Confirmation Standard
+#### 1.3 Vulnerability Confirmation Standard (Data Flow Verification)
 
-Must satisfy all:
-1.  **Entry**: Exists accessible Web Route.
-2.  **Sink**: Exists deserialization call.
-3.  **Flow**: Data flows from Entry to Sink without effective filtering.
+**CRITICAL: Mere presence of a sink is NOT enough.**
+You **MUST** verify the data flow:
+1.  **Entry (Source)**: Identify a public-facing entry point (e.g., HTTP Controller, Filter, Listener).
+2.  **Flow (Taint Propagation)**: Confirm that the input data (Body, Header, Param) is passed to the Sink.
+    *   **Direct**: `readObject(request.getInputStream())`
+    *   **Indirect**: `readObject(decode(request.getParameter("data")))`
+3.  **Sink (Trigger)**: The deserialization function is eventually called with the user-controlled data.
+
+**If the Sink is not reachable from an Entry, it is a "Dead Code" or "Internal Utility", NOT a vulnerability.**
 
 ---
 
@@ -116,16 +121,47 @@ The attacker's goal is to find **as many potential paths as possible**, as real 
 **LLM Prompt Template:**
 
 ```
-As a Java Deserialization Vulnerability Researcher, analyze the following dependency list (including POM and JAR inferences).
+You are a specialized Java Deserialization Vulnerability Researcher with deep expertise in identifying and analyzing gadget chains in Java dependency ecosystems. Your core responsibility is to conduct comprehensive, accurate, and prioritized analysis of deserialization vulnerabilities from provided dependency lists.
+
+Important Context:
+You will analyze dependency lists that may include explicit POM declarations and inferred JAR artifacts. Your analysis must be grounded in real-world exploit mechanics and version-specific vulnerability mitigations/bypasses, focusing exclusively on practical attack vectors relevant to the given dependencies.
 
 Dependency List:
 [Insert dependencies.xml content]
 
-Tasks:
-1. **Full Mining**: List **ALL** possible Gadget Chains (e.g., CC1-7, CB1, Hibernate, Groovy, Rome, JSON, etc.).
-2. **Combination**: Think about "Second Deserialization" (SignedObject) or "Multi-Hop" (TiedMapEntry -> BadAttribute -> ...) possibilities.
-3. **Filter Noise**: Ignore URLDNS/DoS, focus on RCE/IO.
-4. **Output**: List all findings by priority, noting if **Key Dependencies** exist for each chain.
+When presented with a dependency list, you will execute the following tasks in order, ensuring thoroughness and precision:
+
+1. Extract Core Vulnerability Surface:
+   Identify the complete set of dependencies (including transitive inferences where relevant) and isolate all components known to contain deserialization gadget chains.
+
+2. Full Gadget Chain Mining:
+   List **ALL** possible deserialization Gadget Chains present in the dependency list (e.g., CC1-7, CB1, Hibernate, Groovy, Rome, JSON, etc.). Do not omit any potential chains, no matter how niche.
+
+3. Dependency Exploitation Analysis (Per Chain):
+   For each identified gadget chain, provide a detailed exploitation breakdown specific to this dependency context:
+   - Explicitly name the entry point class for the chain
+   - Conduct a precise Version Check: State if the detected version (e.g., `commons-collections-3.2.2`) contains official mitigations for the chain
+   - If mitigations exist, list all known, verifiable bypass techniques applicable to the detected version
+
+4. Advanced Chain Combination Analysis:
+   Evaluate and document possibilities for "Second Deserialization" (e.g., SignedObject wrapping) or "Multi-Hop" chaining (e.g., TiedMapEntry -> BadAttributeValueExpException -> ...) across the identified gadget chains. Explain how these combinations could amplify exploitability.
+
+5. Noise Filtering:
+   Strictly ignore URLDNS chains and Denial of Service (DoS) vectors. Focus **exclusively** on Remote Code Execution (RCE) and File Input/Output (IO) vulnerabilities.
+
+6. Structured Output Generation:
+   Present all findings in a priority-ordered list (highest exploitability first). For each chain:
+   - Clearly indicate if Key Dependencies (critical components required for the chain to function) exist in the provided list
+   - Include a brief justification for the assigned priority
+
+Quality Control Mechanisms:
+- Verify the version compatibility of each gadget chain against the exact dependency versions provided
+- Cross-check exploit techniques against public vulnerability databases (e.g., CVE, NVD) and reputable security research
+- Self-correct if initial analysis omits a known chain, and document the correction in the final output
+- If dependency version information is incomplete, proactively note the ambiguity and provide conditional analysis for major versions
+
+Output Expectations:
+Your analysis must be factual, technically precise, and actionable. Avoid vague statements; use specific class names, method calls, and version numbers where possible. Organize content with clear headings for each task section to enhance readability.
 ```
 
 ### CRITICAL 3: WAF Bypass & Gadget Availability Analysis
@@ -272,18 +308,30 @@ python scripts/scan_dangerous_code.py /path/to/project dangerous_code.md
 
 ---
 
+## 📦 依赖利用深度分析 (Dependency Exploitation Analysis)
+
+### Dependency: `[Jar Name]`
+*   **Role**: Gadget Provider / Utility.
+*   **Key Classes**: `[Class1]`, `[Class2]`.
+*   **Exploit Method**: [Explain HOW this dependency is used in the chain. E.g., "Uses InvokerTransformer to execute runtime commands via reflection".]
+*   **Prerequisites**: [E.g., "Requires JDK < 8u20", "Requires specific configuration"].
+
+---
+
 ## 💣 漏洞利用详情 (Exploitation Details - Multiple Paths)
 
 **(尽可能列出不少于 3 条潜在路径)**
 
 ### [PATH-1] ROME Chain via `/api/upload`
 *   **入口**: `ObjectInputStream.readObject`
+*   **数据流验证 (Data Flow)**: `Http Body` -> `Controller` -> `Service` -> `readObject` (Verified: Yes/No)
 *   **核心**: `ObjectBean` -> `ToStringBean` -> `JdbcRowSetImpl`
 *   **状态**: ✅ 完全可用。
 *   **Payload**: `ysoserial ROME "ldap://..."`
 
 ### [PATH-2] CC6 Variant via `TiedMapEntry`
 *   **入口**: `ObjectInputStream.readObject`
+*   **数据流验证 (Data Flow)**: `Http Param` -> `Base64 Decode` -> `readObject` (Verified: Yes/No)
 *   **核心**: `TiedMapEntry` -> `LazyMap` -> `Factory`
 *   **状态**: ⚠️ 部分受阻 (InvokerTransformer 被禁)。
 *   **突破口**: 需寻找替代 `InvokerTransformer` 的类（如 `InstantiateTransformer`）。
