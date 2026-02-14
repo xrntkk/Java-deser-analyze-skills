@@ -274,7 +274,7 @@ python scripts/scan_dangerous_code.py /path/to/project dangerous_code.md
 
 ## 💣 漏洞利用详情 (Exploitation Details - Multiple Paths)
 
-**(尽可能列出不少于 2 条潜在路径)**
+**(尽可能列出不少于 3 条潜在路径)**
 
 ### [PATH-1] ROME Chain via `/api/upload`
 *   **入口**: `ObjectInputStream.readObject`
