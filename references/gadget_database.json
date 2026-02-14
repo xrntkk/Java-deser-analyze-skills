@@ -1,0 +1,6309 @@
+{
+  "version": "5.0",
+  "description": "完整的 Java 反序列化 Gadget Chain 数据库，包含链的详细信息和依赖关系",
+  "last_updated": "2026-02-14",
+  "source": "merged from gadget_database.json + gadgets.json",
+  "total_chains": 236,
+  "gadget_chains": [
+    {
+      "id": "CHAIN-0001",
+      "name": "CommonsCollectionsK1",
+      "aliases": [
+        "CCK1"
+      ],
+      "description": "CC3.2.1 InvokerTransformer 链，调用任意可序列化对象的任意public方法",
+      "dependencies": [
+        {
+          "group_id": "commons-collections",
+          "artifact_id": "commons-collections",
+          "version": "3.2.1",
+          "version_constraint": null,
+          "vulnerable_versions": [
+            "3.0",
+            "3.1",
+            "3.2",
+            "3.2.1"
+          ],
+          "safe_version": "3.2.2",
+          "_inference": {
+            "confidence": "high",
+            "method": "rule_based"
+          }
+        }
+      ],
+      "tags": [
+        "JavaNativeDeserialize",
+        "TemplatesImplChain",
+        "SignedObjectChain",
+        "SpecialPublicMethod"
+      ],
+      "jdk_version": "any"
+    },
+    {
+      "id": "CHAIN-0002",
+      "name": "CommonsCollectionsK2",
+      "aliases": [
+        "CCK2"
+      ],
+      "description": "CC4.0 InvokerTransformer 链",
+      "dependencies": [
+        {
+          "group_id": "org.apache.commons",
+          "artifact_id": "commons-collections4",
+          "version": "4.0",
+          "version_constraint": null,
+          "vulnerable_versions": [
+            "4.0"
+          ],
+          "safe_version": "4.1",
+          "_inference": {
+            "confidence": "high",
+            "method": "rule_based"
+          }
+        }
+      ],
+      "tags": [
+        "JavaNativeDeserialize",
+        "TemplatesImplChain",
+        "SignedObjectChain",
+        "SpecialPublicMethod"
+      ],
+      "jdk_version": "any"
+    },
+    {
+      "id": "CHAIN-0003",
+      "name": "CommonsCollectionsK3",
+      "aliases": [
+        "CCK3"
+      ],
+      "description": "CC3.2.1 ChainedTransformer 链",
+      "dependencies": [
+        {
+          "group_id": "commons-collections",
+          "artifact_id": "commons-collections",
+          "version": "3.2.1",
+          "version_constraint": null,
+          "vulnerable_versions": [
+            "3.0",
+            "3.1",
+            "3.2",
+            "3.2.1"
+          ],
+          "safe_version": "3.2.2",
+          "_inference": {
+            "confidence": "high",
+            "method": "rule_based"
+          }
+        }
+      ],
+      "tags": [
+        "JavaNativeDeserialize",
+        "TransformerChains"
+      ],
+      "jdk_version": "any"
+    },
+    {
+      "id": "CHAIN-0004",
+      "name": "CommonsCollectionsK4",
+      "aliases": [
+        "CCK4"
+      ],
+      "description": "CC4.0 ChainedTransformer 链",
+      "dependencies": [
+        {
+          "group_id": "org.apache.commons",
+          "artifact_id": "commons-collections4",
+          "version": "4.0",
+          "version_constraint": null,
+          "vulnerable_versions": [
+            "4.0"
+          ],
+          "safe_version": "4.1",
+          "_inference": {
+            "confidence": "high",
+            "method": "rule_based"
+          }
+        }
+      ],
+      "tags": [
+        "JavaNativeDeserialize",
+        "TransformerChains"
+      ],
+      "jdk_version": "any"
+    },
+    {
+      "id": "CHAIN-0005",
+      "name": "CommonsBeanutils1",
+      "aliases": [
+        "CB1"
+      ],
+      "description": "CB 1.9 链，调用任意字段的getter方法",
+      "dependencies": [
+        {
+          "group_id": "commons-beanutils",
+          "artifact_id": "commons-beanutils",
+          "version": "1.9.4",
+          "version_constraint": null,
+          "safe_version": "无",
+          "_inference": {
+            "confidence": "high",
+            "method": "rule_based"
+          }
+        },
+        {
+          "group_id": "commons-logging",
+          "artifact_id": "commons-logging",
+          "version": "1.2",
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "high",
+            "method": "description_parsing"
+          }
+        }
+      ],
+      "tags": [
+        "JavaNativeDeserialize",
+        "Getter",
+        "NotForCommonsBeanutils"
+      ],
+      "jdk_version": "any",
+      "version_range": "1.9.0 ~ 1.9.4"
+    },
+    {
+      "id": "CHAIN-0006",
+      "name": "CommonsBeanutils2",
+      "aliases": [
+        "CB2"
+      ],
+      "description": "CB 1.8/1.7 链",
+      "dependencies": [
+        {
+          "group_id": "commons-beanutils",
+          "artifact_id": "commons-beanutils",
+          "version": "1.8.2",
+          "version_constraint": null,
+          "safe_version": "无",
+          "_inference": {
+            "confidence": "high",
+            "method": "rule_based"
+          }
+        },
+        {
+          "group_id": "commons-logging",
+          "artifact_id": "commons-logging",
+          "version": "1.1.1",
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "high",
+            "method": "description_parsing"
+          }
+        }
+      ],
+      "tags": [
+        "JavaNativeDeserialize",
+        "Getter",
+        "NotForCommonsBeanutils"
+      ],
+      "jdk_version": "any",
+      "version_range": "1.7.0, 1.8.0~1.8.3"
+    },
+    {
+      "id": "CHAIN-0007",
+      "name": "CommonsBeanutils3",
+      "aliases": [
+        "CB3"
+      ],
+      "description": "CB 1.6 链",
+      "dependencies": [
+        {
+          "group_id": "commons-beanutils",
+          "artifact_id": "commons-beanutils",
+          "version": "1.6.1",
+          "version_constraint": null,
+          "safe_version": "无",
+          "_inference": {
+            "confidence": "high",
+            "method": "rule_based"
+          }
+        },
+        {
+          "group_id": "commons-logging",
+          "artifact_id": "commons-logging",
+          "version": "1.1.1",
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "high",
+            "method": "description_parsing"
+          }
+        }
+      ],
+      "tags": [
+        "JavaNativeDeserialize",
+        "Getter",
+        "NotForCommonsBeanutils"
+      ],
+      "jdk_version": "any",
+      "version_range": "1.6 ~ 1.6.1"
+    },
+    {
+      "id": "CHAIN-0008",
+      "name": "CommonsBeanutils4",
+      "aliases": [
+        "CB4"
+      ],
+      "description": "CB 1.5 链",
+      "dependencies": [
+        {
+          "group_id": "commons-beanutils",
+          "artifact_id": "commons-beanutils",
+          "version": "1.5",
+          "version_constraint": null,
+          "safe_version": "无",
+          "_inference": {
+            "confidence": "high",
+            "method": "rule_based"
+          }
+        }
+      ],
+      "tags": [
+        "JavaNativeDeserialize",
+        "Getter",
+        "NotForCommonsBeanutils"
+      ],
+      "jdk_version": "any"
+    },
+    {
+      "id": "CHAIN-0009",
+      "name": "CommonsBeanutils5",
+      "aliases": [
+        "CB5"
+      ],
+      "description": "CB 1.10 链",
+      "dependencies": [
+        {
+          "group_id": "commons-beanutils",
+          "artifact_id": "commons-beanutils",
+          "version": "1.10.0",
+          "version_constraint": null,
+          "safe_version": "无",
+          "_inference": {
+            "confidence": "high",
+            "method": "rule_based"
+          }
+        },
+        {
+          "group_id": "commons-logging",
+          "artifact_id": "commons-logging",
+          "version": "1.3.4",
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "high",
+            "method": "description_parsing"
+          }
+        }
+      ],
+      "tags": [
+        "JavaNativeDeserialize",
+        "Getter",
+        "NotForCommonsBeanutils"
+      ],
+      "jdk_version": "any"
+    },
+    {
+      "id": "CHAIN-0010",
+      "name": "FastjsonJdbcRowSetImpl",
+      "aliases": [],
+      "description": "Fastjson JdbcRowSetImpl JNDI 1.2.47",
+      "dependencies": [
+        {
+          "group_id": "fastjson",
+          "artifact_id": "<=1.2.47",
+          "version": null,
+          "version_constraint": "<= 1.2.47",
+          "_inference": {
+            "confidence": "high",
+            "method": "description_parsing"
+          }
+        }
+      ],
+      "tags": [
+        "FastjsonPayload",
+        "JNDI"
+      ],
+      "jdk_version": "any"
+    },
+    {
+      "id": "CHAIN-0011",
+      "name": "FastjsonC3p0",
+      "aliases": [],
+      "description": "Fastjson C3P0 二次反序列化 1.2.47",
+      "dependencies": [
+        {
+          "group_id": "com.mchange",
+          "artifact_id": "c3p0",
+          "version": null,
+          "version_constraint": null,
+          "vulnerable_versions": [
+            "all"
+          ],
+          "safe_version": "无",
+          "_inference": {
+            "confidence": "high",
+            "method": "rule_based"
+          }
+        },
+        {
+          "group_id": "fastjson",
+          "artifact_id": "<=1.2.47",
+          "version": null,
+          "version_constraint": "<= 1.2.47",
+          "_inference": {
+            "confidence": "high",
+            "method": "description_parsing"
+          }
+        }
+      ],
+      "tags": [
+        "FastjsonPayload",
+        "JavaNativeDeserializePayload"
+      ],
+      "jdk_version": "any"
+    },
+    {
+      "id": "CHAIN-0012",
+      "name": "FastjsonBasicDataSource",
+      "aliases": [],
+      "description": "Fastjson DBCP BasicDataSource BCEL 1.2.47",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "bcel",
+          "version": null,
+          "version_constraint": "<= 1.2.47",
+          "_inference": {
+            "confidence": "high",
+            "method": "description_parsing"
+          }
+        },
+        {
+          "group_id": null,
+          "artifact_id": "dbcp",
+          "version": null,
+          "version_constraint": "<= 1.2.47",
+          "_inference": {
+            "confidence": "high",
+            "method": "description_parsing"
+          }
+        },
+        {
+          "group_id": "fastjson",
+          "artifact_id": "<=1.2.47",
+          "version": null,
+          "version_constraint": "<= 1.2.47",
+          "_inference": {
+            "confidence": "high",
+            "method": "description_parsing"
+          }
+        }
+      ],
+      "tags": [
+        "FastjsonPayload",
+        "BCEL_Expr"
+      ],
+      "jdk_version": "any"
+    },
+    {
+      "id": "CHAIN-0013",
+      "name": "FastjsonGroovy",
+      "aliases": [],
+      "description": "Fastjson Groovy 1.2.83",
+      "dependencies": [
+        {
+          "group_id": "org.codehaus",
+          "artifact_id": "groovy",
+          "version": null,
+          "version_constraint": "<= 1.2.83",
+          "_inference": {
+            "confidence": "high",
+            "method": "description_parsing"
+          }
+        },
+        {
+          "group_id": null,
+          "artifact_id": "1.2.76<=fastjson<=1.2.83",
+          "version": null,
+          "version_constraint": "<= 1.2.83",
+          "_inference": {
+            "confidence": "high",
+            "method": "description_parsing"
+          }
+        }
+      ],
+      "tags": [
+        "FastjsonPayload"
+      ],
+      "jdk_version": "any",
+      "notes": "需要 autoTypeEnabled"
+    },
+    {
+      "id": "CHAIN-0014",
+      "name": "FastjsonH2Jdbc",
+      "aliases": [],
+      "description": "Fastjson H2 JDBC 1.2.47",
+      "dependencies": [
+        {
+          "group_id": "com.h2database",
+          "artifact_id": "h2",
+          "version": null,
+          "version_constraint": "<=2.2.224",
+          "vulnerable_versions": [
+            "all"
+          ],
+          "safe_version": "无",
+          "_inference": {
+            "confidence": "high",
+            "method": "rule_based"
+          }
+        },
+        {
+          "group_id": "fastjson",
+          "artifact_id": "<=1.2.61",
+          "version": null,
+          "version_constraint": "<= 1.2.47",
+          "_inference": {
+            "confidence": "high",
+            "method": "description_parsing"
+          }
+        }
+      ],
+      "tags": [
+        "FastjsonPayload",
+        "BytecodeConvertTag"
+      ],
+      "jdk_version": "any"
+    },
+    {
+      "id": "CHAIN-0015",
+      "name": "FastjsonMySQLJdbc",
+      "aliases": [],
+      "description": "Fastjson MySQL JDBC 1.2.68",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "mysql",
+          "version": null,
+          "version_constraint": "<= 1.2.68",
+          "_inference": {
+            "confidence": "high",
+            "method": "description_parsing"
+          }
+        },
+        {
+          "group_id": "fastjson",
+          "artifact_id": "<=1.2.68",
+          "version": null,
+          "version_constraint": "<= 1.2.68",
+          "_inference": {
+            "confidence": "high",
+            "method": "description_parsing"
+          }
+        }
+      ],
+      "tags": [
+        "FastjsonPayload"
+      ],
+      "jdk_version": "any"
+    },
+    {
+      "id": "CHAIN-0016",
+      "name": "FastjsonPostgreSQLJdbc",
+      "aliases": [],
+      "description": "Fastjson PostgreSQL JDBC 1.2.68",
+      "dependencies": [
+        {
+          "group_id": "org.postgresql",
+          "artifact_id": "postgresql",
+          "version": null,
+          "version_constraint": null,
+          "vulnerable_versions": [
+            "9.4.1208-42.2.24",
+            "42.3.0-42.3.1"
+          ],
+          "safe_version": "42.2.25, 42.3.2",
+          "_inference": {
+            "confidence": "high",
+            "method": "rule_based"
+          }
+        },
+        {
+          "group_id": "fastjson",
+          "artifact_id": "<=1.2.68",
+          "version": null,
+          "version_constraint": "<= 1.2.68",
+          "_inference": {
+            "confidence": "high",
+            "method": "description_parsing"
+          }
+        }
+      ],
+      "tags": [
+        "FastjsonPayload"
+      ],
+      "jdk_version": "any",
+      "version_range": "9.4.1208<=postgresql<42.2.25 or 42.3.0<=postgresql<42.3.2"
+    },
+    {
+      "id": "CHAIN-0017",
+      "name": "C3p0_C3p0HexSerialize",
+      "aliases": [],
+      "description": "C3P0 二次反序列化",
+      "dependencies": [
+        {
+          "group_id": "c3p0",
+          "artifact_id": "c3p0",
+          "version": null,
+          "version_constraint": null,
+          "vulnerable_versions": [
+            "all"
+          ],
+          "safe_version": "无",
+          "_inference": {
+            "confidence": "high",
+            "method": "rule_based"
+          }
+        }
+      ],
+      "tags": [
+        "C3P0HexSerializeChain",
+        "AmfDeserialize",
+        "Setter"
+      ],
+      "jdk_version": "any"
+    },
+    {
+      "id": "CHAIN-0018",
+      "name": "C3p0_C3p0Jndi",
+      "aliases": [],
+      "description": "C3P0 JNDI注入",
+      "dependencies": [
+        {
+          "group_id": "c3p0",
+          "artifact_id": "c3p0",
+          "version": null,
+          "version_constraint": null,
+          "vulnerable_versions": [
+            "all"
+          ],
+          "safe_version": "无",
+          "_inference": {
+            "confidence": "high",
+            "method": "rule_based"
+          }
+        }
+      ],
+      "tags": [
+        "C3p0JndiChain",
+        "SpecialPublicMethod",
+        "Getter",
+        "Setter"
+      ],
+      "jdk_version": "any"
+    },
+    {
+      "id": "CHAIN-0019",
+      "name": "C3p0_C3p0Reference",
+      "aliases": [],
+      "description": "C3P0 Reference 类加载",
+      "dependencies": [
+        {
+          "group_id": "c3p0",
+          "artifact_id": "c3p0",
+          "version": null,
+          "version_constraint": null,
+          "vulnerable_versions": [
+            "all"
+          ],
+          "safe_version": "无",
+          "_inference": {
+            "confidence": "high",
+            "method": "rule_based"
+          }
+        }
+      ],
+      "tags": [
+        "JavaNativeDeserialize",
+        "Reference",
+        "ResourceRef"
+      ],
+      "jdk_version": "any",
+      "notes": "影响最新版 0.10.1"
+    },
+    {
+      "id": "CHAIN-0020",
+      "name": "MchangeC3p0Reference",
+      "aliases": [],
+      "description": "C3P0 Reference 类加载",
+      "dependencies": [
+        {
+          "group_id": "com.mchange",
+          "artifact_id": "c3p0",
+          "version": "0.9.1.2~0.10.1",
+          "version_constraint": null,
+          "vulnerable_versions": [
+            "all"
+          ],
+          "safe_version": "无",
+          "_inference": {
+            "confidence": "high",
+            "method": "rule_based"
+          }
+        }
+      ],
+      "tags": [
+        "JavaNativeDeserialize",
+        "Reference",
+        "ResourceRef"
+      ],
+      "jdk_version": "any"
+    },
+    {
+      "id": "CHAIN-0021",
+      "name": "H2JavaJdbc1",
+      "aliases": [],
+      "description": "H2 JDBC URL Java加载字节码1",
+      "dependencies": [
+        {
+          "group_id": "com.h2database",
+          "artifact_id": "h2",
+          "version": "org.h2.Driver",
+          "version_constraint": null,
+          "vulnerable_versions": [
+            "all"
+          ],
+          "safe_version": "无",
+          "_inference": {
+            "confidence": "high",
+            "method": "rule_based"
+          }
+        }
+      ],
+      "tags": [
+        "H2JdbcUrl",
+        "JdbcUrlChains",
+        "BytecodeConvertTag"
+      ],
+      "jdk_version": "any"
+    },
+    {
+      "id": "CHAIN-0022",
+      "name": "H2JavaJdbc2",
+      "aliases": [],
+      "description": "H2 JDBC URL Java加载字节码2 TRIGGER",
+      "dependencies": [
+        {
+          "group_id": "com.h2database",
+          "artifact_id": "h2",
+          "version": "org.h2.Driver",
+          "version_constraint": null,
+          "vulnerable_versions": [
+            "all"
+          ],
+          "safe_version": "无",
+          "_inference": {
+            "confidence": "high",
+            "method": "rule_based"
+          }
+        }
+      ],
+      "tags": [
+        "H2JdbcUrl",
+        "JdbcUrlChains",
+        "BytecodeConvertTag"
+      ],
+      "jdk_version": "any"
+    },
+    {
+      "id": "CHAIN-0023",
+      "name": "H2JavaJdbc3",
+      "aliases": [],
+      "description": "H2 JDBC URL Java加载字节码3",
+      "dependencies": [
+        {
+          "group_id": "com.h2database",
+          "artifact_id": "h2",
+          "version": "org.h2.Driver",
+          "version_constraint": null,
+          "vulnerable_versions": [
+            "all"
+          ],
+          "safe_version": "无",
+          "_inference": {
+            "confidence": "high",
+            "method": "rule_based"
+          }
+        }
+      ],
+      "tags": [
+        "H2JdbcUrl",
+        "JdbcUrlChains",
+        "BytecodeConvertTag"
+      ],
+      "jdk_version": "<=8"
+    },
+    {
+      "id": "CHAIN-0024",
+      "name": "H2GroovyExecJdbc",
+      "aliases": [],
+      "description": "H2 JDBC URL Groovy命令执行",
+      "dependencies": [
+        {
+          "group_id": "com.h2database",
+          "artifact_id": "h2",
+          "version": "org.h2.Driver",
+          "version_constraint": null,
+          "vulnerable_versions": [
+            "all"
+          ],
+          "safe_version": "无",
+          "_inference": {
+            "confidence": "high",
+            "method": "rule_based"
+          }
+        },
+        {
+          "group_id": "org.codehaus.groovy",
+          "artifact_id": "groovy",
+          "version": "2.4.3",
+          "version_constraint": null,
+          "vulnerable_versions": [
+            "< 2.5.x"
+          ],
+          "_inference": {
+            "confidence": "high",
+            "method": "rule_based"
+          }
+        }
+      ],
+      "tags": [
+        "H2JdbcUrl",
+        "JdbcUrlChains"
+      ],
+      "jdk_version": "any"
+    },
+    {
+      "id": "CHAIN-0025",
+      "name": "H2JsExecJdbc",
+      "aliases": [],
+      "description": "H2 JDBC URL JS命令执行",
+      "dependencies": [
+        {
+          "group_id": "com.h2database",
+          "artifact_id": "h2",
+          "version": "org.h2.Driver",
+          "version_constraint": null,
+          "vulnerable_versions": [
+            "all"
+          ],
+          "safe_version": "无",
+          "_inference": {
+            "confidence": "high",
+            "method": "rule_based"
+          }
+        }
+      ],
+      "tags": [
+        "H2JdbcUrl",
+        "JdbcUrlChains"
+      ],
+      "jdk_version": "any"
+    },
+    {
+      "id": "CHAIN-0026",
+      "name": "H2JavaExecJdbc1",
+      "aliases": [],
+      "description": "H2 JDBC URL Java命令执行1",
+      "dependencies": [
+        {
+          "group_id": "com.h2database",
+          "artifact_id": "h2",
+          "version": "org.h2.Driver",
+          "version_constraint": null,
+          "vulnerable_versions": [
+            "all"
+          ],
+          "safe_version": "无",
+          "_inference": {
+            "confidence": "high",
+            "method": "rule_based"
+          }
+        }
+      ],
+      "tags": [
+        "H2JdbcUrl",
+        "JdbcUrlChains"
+      ],
+      "jdk_version": "any"
+    },
+    {
+      "id": "CHAIN-0027",
+      "name": "H2JavaExecJdbc2",
+      "aliases": [],
+      "description": "H2 JDBC URL Java命令执行2 TRIGGER",
+      "dependencies": [
+        {
+          "group_id": "com.h2database",
+          "artifact_id": "h2",
+          "version": "org.h2.Driver",
+          "version_constraint": null,
+          "vulnerable_versions": [
+            "all"
+          ],
+          "safe_version": "无",
+          "_inference": {
+            "confidence": "high",
+            "method": "rule_based"
+          }
+        }
+      ],
+      "tags": [
+        "H2JdbcUrl",
+        "JdbcUrlChains"
+      ],
+      "jdk_version": "any"
+    },
+    {
+      "id": "CHAIN-0028",
+      "name": "H2JavaReverseJdbc",
+      "aliases": [],
+      "description": "H2 JDBC URL Java反弹shell",
+      "dependencies": [
+        {
+          "group_id": "com.h2database",
+          "artifact_id": "h2",
+          "version": "org.h2.Driver",
+          "version_constraint": null,
+          "vulnerable_versions": [
+            "all"
+          ],
+          "safe_version": "无",
+          "_inference": {
+            "confidence": "high",
+            "method": "rule_based"
+          }
+        }
+      ],
+      "tags": [
+        "H2JdbcUrl",
+        "JdbcUrlChains"
+      ],
+      "jdk_version": "any"
+    },
+    {
+      "id": "CHAIN-0029",
+      "name": "H2RemoteJdbc",
+      "aliases": [],
+      "description": "H2 JDBC URL 远程加载执行sql文件",
+      "dependencies": [
+        {
+          "group_id": "com.h2database",
+          "artifact_id": "h2",
+          "version": "org.h2.Driver",
+          "version_constraint": null,
+          "vulnerable_versions": [
+            "all"
+          ],
+          "safe_version": "无",
+          "_inference": {
+            "confidence": "high",
+            "method": "rule_based"
+          }
+        }
+      ],
+      "tags": [
+        "H2JdbcUrl",
+        "JdbcUrlChains"
+      ],
+      "jdk_version": "any"
+    },
+    {
+      "id": "CHAIN-0030",
+      "name": "PostgreSqlJdbc",
+      "aliases": [],
+      "description": "PostgreSQL JDBC URL CVE-2022-21724",
+      "dependencies": [
+        {
+          "group_id": "org.postgresql",
+          "artifact_id": "postgresql",
+          "version": "org.postgresql.Driver",
+          "version_constraint": null,
+          "vulnerable_versions": [
+            "9.4.1208-42.2.24",
+            "42.3.0-42.3.1"
+          ],
+          "safe_version": "42.2.25, 42.3.2",
+          "_inference": {
+            "confidence": "high",
+            "method": "rule_based"
+          }
+        }
+      ],
+      "tags": [
+        "PostgreSQLJdbcUrl",
+        "JdbcUrlChains"
+      ],
+      "jdk_version": "any",
+      "version_range": "9.4.1208<=postgresql<42.2.25 or 42.3.0<=postgresql<42.3.2",
+      "cve": [
+        "CVE-2022-21724"
+      ]
+    },
+    {
+      "id": "CHAIN-0031",
+      "name": "OpengaussJdbc",
+      "aliases": [],
+      "description": "Openguass JDBC URL (魔改PostgreSQL)",
+      "dependencies": [
+        {
+          "group_id": "Opengauss",
+          "artifact_id": "<3.0.0",
+          "version": null,
+          "version_constraint": null
+        }
+      ],
+      "tags": [
+        "OpenguassSQLJdbcUrl",
+        "JdbcUrlChains"
+      ],
+      "jdk_version": "any"
+    },
+    {
+      "id": "CHAIN-0032",
+      "name": "MysqlJdbc",
+      "aliases": [],
+      "description": "MySQL JDBC URL",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "mysql-connector-java",
+          "version": null,
+          "version_constraint": null
+        }
+      ],
+      "tags": [
+        "MysqlJdbcUrl",
+        "JdbcUrlChains"
+      ],
+      "jdk_version": "any"
+    },
+    {
+      "id": "CHAIN-0033",
+      "name": "DerbyInstallJdbc",
+      "aliases": [],
+      "description": "Derby 远程加载jar包-多SQL",
+      "dependencies": [
+        {
+          "group_id": "derby",
+          "artifact_id": "org.apache.derby.jdbc.EmbeddedDriver",
+          "version": null,
+          "version_constraint": null
+        }
+      ],
+      "tags": [
+        "DerbyJdbcUrl",
+        "JdbcUrlWithSQLChains"
+      ],
+      "jdk_version": "any"
+    },
+    {
+      "id": "CHAIN-0034",
+      "name": "DerbySlaveJdbc",
+      "aliases": [],
+      "description": "Derby slave远程反序列化 无SQL",
+      "dependencies": [
+        {
+          "group_id": "derby",
+          "artifact_id": "org.apache.derby.jdbc.EmbeddedDriver",
+          "version": null,
+          "version_constraint": null
+        }
+      ],
+      "tags": [
+        "DerbyJdbcUrl",
+        "JdbcUrlChains"
+      ],
+      "jdk_version": "any"
+    },
+    {
+      "id": "CHAIN-0035",
+      "name": "HsqldbDefineClassJdbc",
+      "aliases": [],
+      "description": "Hsql CALL defineClass 加载字节码",
+      "dependencies": [
+        {
+          "group_id": "hsqldb",
+          "artifact_id": "org.hsqldb.jdbcDriver",
+          "version": null,
+          "version_constraint": null
+        },
+        {
+          "group_id": null,
+          "artifact_id": "spring-core",
+          "version": null,
+          "version_constraint": null
+        }
+      ],
+      "tags": [
+        "HsqldbJdbcUrl",
+        "JdbcUrlWithSQLChains",
+        "BytecodeConvertTag"
+      ],
+      "jdk_version": "any"
+    },
+    {
+      "id": "CHAIN-0036",
+      "name": "HsqldbHexDeserJdbc",
+      "aliases": [],
+      "description": "Hsql CALL SerializationUtils 二次反序列化",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "spring",
+          "version": null,
+          "version_constraint": null
+        },
+        {
+          "group_id": "hsqldb",
+          "artifact_id": "org.hsqldb.jdbcDriver",
+          "version": null,
+          "version_constraint": null
+        }
+      ],
+      "tags": [
+        "HsqldbJdbcUrl",
+        "JdbcUrlWithSQLChains"
+      ],
+      "jdk_version": "any"
+    },
+    {
+      "id": "CHAIN-0037",
+      "name": "HsqldbJndiJdbc",
+      "aliases": [],
+      "description": "Hsql CALL InitialContext JNDI注入",
+      "dependencies": [
+        {
+          "group_id": "hsqldb",
+          "artifact_id": "org.hsqldb.jdbcDriver",
+          "version": null,
+          "version_constraint": null
+        }
+      ],
+      "tags": [
+        "HsqldbJdbcUrl",
+        "JdbcUrlWithSQLChains"
+      ],
+      "jdk_version": "any"
+    },
+    {
+      "id": "CHAIN-0038",
+      "name": "HsqldbC3p0HexJdbc",
+      "aliases": [],
+      "description": "Hsql CALL C3P0ImplUtils 二次反序列化",
+      "dependencies": [
+        {
+          "group_id": "com.mchange",
+          "artifact_id": "c3p0",
+          "version": null,
+          "version_constraint": null,
+          "vulnerable_versions": [
+            "all"
+          ],
+          "safe_version": "无",
+          "_inference": {
+            "confidence": "high",
+            "method": "rule_based"
+          }
+        },
+        {
+          "group_id": "hsqldb",
+          "artifact_id": "org.hsqldb.jdbcDriver",
+          "version": null,
+          "version_constraint": null
+        }
+      ],
+      "tags": [
+        "HsqldbJdbcUrl",
+        "JdbcUrlWithSQLChains"
+      ],
+      "jdk_version": "any"
+    },
+    {
+      "id": "CHAIN-0039",
+      "name": "Hibernate1",
+      "aliases": [],
+      "description": "Hibernate1链 版本3/4",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "hibernate",
+          "version": null,
+          "version_constraint": null
+        }
+      ],
+      "tags": [
+        "JavaNativeDeserialize",
+        "TemplatesImplChain"
+      ],
+      "jdk_version": "any"
+    },
+    {
+      "id": "CHAIN-0040",
+      "name": "Hibernate2",
+      "aliases": [],
+      "description": "Hibernate2链 版本3/4",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "hibernate",
+          "version": null,
+          "version_constraint": null
+        }
+      ],
+      "tags": [
+        "JavaNativeDeserialize",
+        "JdbcRowSetImplChain"
+      ],
+      "jdk_version": "any"
+    },
+    {
+      "id": "CHAIN-0041",
+      "name": "Hibernate1For5",
+      "aliases": [],
+      "description": "Hibernate1链 版本5",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "hibernate5",
+          "version": null,
+          "version_constraint": null
+        }
+      ],
+      "tags": [
+        "JavaNativeDeserialize",
+        "TemplatesImplChain"
+      ],
+      "jdk_version": "any"
+    },
+    {
+      "id": "CHAIN-0042",
+      "name": "Hibernate2For5",
+      "aliases": [],
+      "description": "Hibernate2链 版本5",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "hibernate5",
+          "version": null,
+          "version_constraint": null
+        }
+      ],
+      "tags": [
+        "JavaNativeDeserialize",
+        "JdbcRowSetImplChain"
+      ],
+      "jdk_version": "any"
+    },
+    {
+      "id": "CHAIN-0043",
+      "name": "Spring1",
+      "aliases": [],
+      "description": "Spring1链",
+      "dependencies": [
+        {
+          "group_id": "org.springframework",
+          "artifact_id": "spring-beans",
+          "version": "5.0.0-5.2.8",
+          "version_constraint": null,
+          "vulnerable_versions": [
+            "5.0.0-5.2.8",
+            "5.3.0-5.3.18"
+          ],
+          "safe_version": "5.3.20",
+          "_inference": {
+            "confidence": "high",
+            "method": "rule_based"
+          }
+        },
+        {
+          "group_id": null,
+          "artifact_id": "5.3.0-5.3.18",
+          "version": null,
+          "version_constraint": null
+        }
+      ],
+      "tags": [
+        "JavaNativeDeserialize"
+      ],
+      "jdk_version": "any",
+      "cve": [
+        "CVE-2022-22965"
+      ],
+      "safe_version": "5.3.20"
+    },
+    {
+      "id": "CHAIN-0044",
+      "name": "SpringAopAspectjweaver",
+      "aliases": [],
+      "description": "SpringAop aspectjweaver 链",
+      "dependencies": [
+        {
+          "group_id": "org.springframework",
+          "artifact_id": "spring-aop",
+          "version": "5.3.19",
+          "version_constraint": null
+        },
+        {
+          "group_id": "org.aspectj",
+          "artifact_id": "aspectjweaver",
+          "version": "1.9.8",
+          "version_constraint": null
+        }
+      ],
+      "tags": [
+        "ToString",
+        "NotForHessian",
+        "TemplatesImplChain"
+      ],
+      "jdk_version": "any"
+    },
+    {
+      "id": "CHAIN-0045",
+      "name": "Rome1",
+      "aliases": [],
+      "description": "ROME链1 rome",
+      "dependencies": [
+        {
+          "group_id": "rome",
+          "artifact_id": "rome",
+          "version": "1.0",
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "high",
+            "method": "rule_based"
+          }
+        }
+      ],
+      "tags": [
+        "JavaNativeDeserialize",
+        "HessianDeserialize"
+      ],
+      "jdk_version": "any"
+    },
+    {
+      "id": "CHAIN-0046",
+      "name": "Rome2",
+      "aliases": [],
+      "description": "ROME链2 rometools",
+      "dependencies": [
+        {
+          "group_id": "com.rometools",
+          "artifact_id": "rome",
+          "version": "1.7",
+          "version_constraint": null,
+          "vulnerable_versions": [
+            "< 1.18.0"
+          ],
+          "safe_version": "1.18.0",
+          "_inference": {
+            "confidence": "high",
+            "method": "rule_based"
+          }
+        }
+      ],
+      "tags": [
+        "JavaNativeDeserialize",
+        "HessianDeserialize"
+      ],
+      "jdk_version": "any"
+    },
+    {
+      "id": "CHAIN-0047",
+      "name": "Groovy",
+      "aliases": [],
+      "description": "Groovy反序列化链",
+      "dependencies": [
+        {
+          "group_id": "org.codehaus.groovy",
+          "artifact_id": "groovy",
+          "version": "2.4.3",
+          "version_constraint": null,
+          "vulnerable_versions": [
+            "< 2.5.x"
+          ],
+          "_inference": {
+            "confidence": "high",
+            "method": "rule_based"
+          }
+        }
+      ],
+      "tags": [
+        "JavaNativeDeserialize",
+        "ClosureWithTemplatesImplChain"
+      ],
+      "jdk_version": "any"
+    },
+    {
+      "id": "CHAIN-0048",
+      "name": "Jdk7u21",
+      "aliases": [],
+      "description": "JDK7u21反序列化链",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "jdk",
+          "version": null,
+          "version_constraint": "7u21",
+          "_inference": {
+            "confidence": "high",
+            "method": "context_jdk_version"
+          }
+        }
+      ],
+      "tags": [
+        "JavaNativeDeserialize",
+        "TemplatesImplChain"
+      ],
+      "jdk_version": "7u21"
+    },
+    {
+      "id": "CHAIN-0049",
+      "name": "JRE8u20",
+      "aliases": [],
+      "description": "JRE8u20反序列化链",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "jdk",
+          "version": null,
+          "version_constraint": "8u20",
+          "_inference": {
+            "confidence": "high",
+            "method": "context_jdk_version"
+          }
+        }
+      ],
+      "tags": [
+        "JavaNativeDeserialize",
+        "TemplatesImplChain"
+      ],
+      "jdk_version": "8u20"
+    },
+    {
+      "id": "CHAIN-0050",
+      "name": "JRMPClient",
+      "aliases": [],
+      "description": "JRMPClient 绕过 JEP290",
+      "dependencies": [
+        {
+          "group_id": "jdk",
+          "artifact_id": "<8u121",
+          "version": null,
+          "version_constraint": null
+        }
+      ],
+      "tags": [
+        "JavaNativeDeserialize"
+      ],
+      "jdk_version": "<8u121"
+    },
+    {
+      "id": "CHAIN-0051",
+      "name": "JRMPClient2",
+      "aliases": [],
+      "description": "JRMPClient2",
+      "dependencies": [
+        {
+          "group_id": "jdk",
+          "artifact_id": "<8u241",
+          "version": null,
+          "version_constraint": null
+        }
+      ],
+      "tags": [
+        "JavaNativeDeserialize"
+      ],
+      "jdk_version": "<8u241"
+    },
+    {
+      "id": "CHAIN-0052",
+      "name": "TemplatesImpl",
+      "aliases": [],
+      "description": "TemplatesImpl加载字节码，需继承AbstractTranslet",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "jdk",
+          "version": null,
+          "version_constraint": "<17",
+          "_inference": {
+            "confidence": "high",
+            "method": "context_jdk_version"
+          }
+        }
+      ],
+      "tags": [
+        "TemplatesImplChain",
+        "Getter",
+        "BytecodeConvertTag"
+      ],
+      "jdk_version": "<17",
+      "notes": "不适用于高版本JDK和部分Hessian场景"
+    },
+    {
+      "id": "CHAIN-0053",
+      "name": "TemplatesImpl2",
+      "aliases": [],
+      "description": "TemplatesImpl2不需要继承AbstractTranslet",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "jdk",
+          "version": null,
+          "version_constraint": "17",
+          "_inference": {
+            "confidence": "high",
+            "method": "context_jdk_version"
+          }
+        }
+      ],
+      "tags": [
+        "TemplatesImplChain",
+        "Getter",
+        "BytecodeConvertTag"
+      ],
+      "jdk_version": "17",
+      "notes": "适用于高版本JDK"
+    },
+    {
+      "id": "CHAIN-0054",
+      "name": "URLDNS",
+      "aliases": [],
+      "description": "发起DNS请求，判断反序列化点",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "jdk",
+          "version": null,
+          "version_constraint": null
+        }
+      ],
+      "tags": [
+        "JavaNativeDeserialize"
+      ],
+      "jdk_version": "any",
+      "notes": "用于探测反序列化点和DNS出网"
+    },
+    {
+      "id": "CHAIN-0055",
+      "name": "FindClass",
+      "aliases": [],
+      "description": "DNSLog探测类",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "jdk",
+          "version": null,
+          "version_constraint": null
+        }
+      ],
+      "tags": [
+        "JavaNativeDeserialize"
+      ],
+      "jdk_version": "any"
+    },
+    {
+      "id": "CHAIN-0056",
+      "name": "FindClassByBomb",
+      "aliases": [],
+      "description": "Sleep探测类",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "jdk",
+          "version": null,
+          "version_constraint": null
+        }
+      ],
+      "tags": [
+        "JavaNativeDeserialize"
+      ],
+      "jdk_version": "any"
+    },
+    {
+      "id": "CHAIN-0057",
+      "name": "TomcatEcho",
+      "aliases": [],
+      "description": "Tomcat 命令执行明文回显",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "tomcat",
+          "version": "any",
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "high",
+            "method": "echo_chain"
+          }
+        }
+      ],
+      "tags": [
+        "Bytecode",
+        "Echo"
+      ],
+      "jdk_version": "any"
+    },
+    {
+      "id": "CHAIN-0058",
+      "name": "TomcatEcho2",
+      "aliases": [],
+      "description": "Tomcat/JBoss/BES 命令执行明文回显",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "tomcat",
+          "version": "any",
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "high",
+            "method": "echo_chain"
+          }
+        }
+      ],
+      "tags": [
+        "Bytecode",
+        "Echo"
+      ],
+      "jdk_version": "any"
+    },
+    {
+      "id": "CHAIN-0059",
+      "name": "WebLogicEcho",
+      "aliases": [],
+      "description": "WebLogic 命令执行明文回显",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "weblogic",
+          "version": "any",
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "high",
+            "method": "echo_chain"
+          }
+        }
+      ],
+      "tags": [
+        "Bytecode",
+        "Echo"
+      ],
+      "jdk_version": "any"
+    },
+    {
+      "id": "CHAIN-0060",
+      "name": "JettyEcho",
+      "aliases": [],
+      "description": "Jetty 命令执行明文回显",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "jetty",
+          "version": "any",
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "high",
+            "method": "echo_chain"
+          }
+        }
+      ],
+      "tags": [
+        "Bytecode",
+        "Echo"
+      ],
+      "jdk_version": "any"
+    },
+    {
+      "id": "CHAIN-0061",
+      "name": "ResinEcho",
+      "aliases": [],
+      "description": "Resin 命令执行明文回显",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "resin",
+          "version": "any",
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "high",
+            "method": "echo_chain"
+          }
+        }
+      ],
+      "tags": [
+        "Bytecode",
+        "Echo"
+      ],
+      "jdk_version": "any"
+    },
+    {
+      "id": "CHAIN-0062",
+      "name": "GlassFishEcho",
+      "aliases": [],
+      "description": "GlassFish/Payara/InforSuite/ApusicV10/Primeton 回显",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "glassfish",
+          "version": "any",
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "high",
+            "method": "echo_chain"
+          }
+        }
+      ],
+      "tags": [
+        "Bytecode",
+        "Echo"
+      ],
+      "jdk_version": "any"
+    },
+    {
+      "id": "CHAIN-0063",
+      "name": "TongWebEcho",
+      "aliases": [],
+      "description": "TongWeb 6/7/8 命令执行明文回显",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "tongweb",
+          "version": "any",
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "high",
+            "method": "echo_chain"
+          }
+        }
+      ],
+      "tags": [
+        "Bytecode",
+        "Echo"
+      ],
+      "jdk_version": "any"
+    },
+    {
+      "id": "CHAIN-0064",
+      "name": "WebSphereEcho",
+      "aliases": [],
+      "description": "WebSphere 8/9 命令执行明文回显",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "websphere",
+          "version": "any",
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "high",
+            "method": "echo_chain"
+          }
+        }
+      ],
+      "tags": [
+        "Bytecode",
+        "Echo"
+      ],
+      "jdk_version": "any"
+    },
+    {
+      "id": "CHAIN-0065",
+      "name": "UndertowEcho",
+      "aliases": [],
+      "description": "Undertow/JBossEAP7/WildFly 回显",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "undertow",
+          "version": "any",
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "high",
+            "method": "echo_chain"
+          }
+        }
+      ],
+      "tags": [
+        "Bytecode",
+        "Echo"
+      ],
+      "jdk_version": "any"
+    },
+    {
+      "id": "CHAIN-0066",
+      "name": "ApusicEcho",
+      "aliases": [],
+      "description": "生成 ApusicV9 命令执行明文回显的字节码",
+      "dependencies": [],
+      "tags": [
+        "Echo"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "ExcludeTags"
+    },
+    {
+      "id": "CHAIN-0067",
+      "name": "AspectJ链指定目录文件写入文件",
+      "aliases": [],
+      "description": "1.9.4不存在",
+      "dependencies": [
+        {
+          "group_id": "commons-collections",
+          "artifact_id": "commons-collections",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "JavaNativeDeserialize"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "AspectJWeaver",
+      "pre_tags": [
+        "StoreableCachingMap"
+      ],
+      "next_tags": [
+        "AudioFileFormat$TypeToString"
+      ]
+    },
+    {
+      "id": "CHAIN-0068",
+      "name": "自定义byte[]类型数据(Hex)",
+      "aliases": [],
+      "description": "会自动对字符串进行Hex解码操作",
+      "dependencies": [],
+      "tags": [],
+      "jdk_version": "any",
+      "gadget_class": "ByteArrayFromHex"
+    },
+    {
+      "id": "CHAIN-0069",
+      "name": "自定义byte[]类型数据(文件上传)",
+      "aliases": [],
+      "description": "CustomBytePayload",
+      "dependencies": [],
+      "tags": [],
+      "jdk_version": "any",
+      "gadget_class": "ByteArrayFromUploadFile"
+    },
+    {
+      "id": "CHAIN-0070",
+      "name": "处理字节码",
+      "aliases": [],
+      "description": "对字节码进行处理，比如修改类名、实现特定接口、插入特定函数以及字节码混淆",
+      "dependencies": [
+        {
+          "group_id": "内置 https",
+          "artifact_id": "//github.com/jar-analyzer/class-obf v1.9.1 字节码混淆",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "BytecodeConvertTag"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "BytecodeConvert",
+      "pre_tags": [
+        "Bytecode"
+      ],
+      "next_tags": [
+        "BytecodeFromBase64"
+      ]
+    },
+    {
+      "id": "CHAIN-0071",
+      "name": "自定义字节码-Hex字符串",
+      "aliases": [],
+      "description": "从参数中解码获取字节码字节流，适用于自定义字节码场合，增加了工具拓展性",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "BytecodeConvertTag",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "Bytecode"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "BytecodeFromHex"
+    },
+    {
+      "id": "CHAIN-0072",
+      "name": "自定义字节码-本地文件",
+      "aliases": [],
+      "description": "从文件中读取字节码，适用于自定义字节码场合，增加了工具拓展性",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "BytecodeConvertTag",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "Bytecode"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "BytecodeFromLocalFile"
+    },
+    {
+      "id": "CHAIN-0073",
+      "name": "自定义字节码-上传文件",
+      "aliases": [],
+      "description": "BytecodeConvertTag",
+      "dependencies": [],
+      "tags": [],
+      "jdk_version": "any",
+      "gadget_class": "BytecodeFromUploadFile"
+    },
+    {
+      "id": "CHAIN-0074",
+      "name": "C3p0:C3P0 二次反序列化",
+      "aliases": [],
+      "description": "支持Java反序列化，通过调用 setUpPropertyListeners() 方法触发二次反序列化",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "注意setUpPropertyListeners()是private方法，不适用于CC链中的调用",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "c3p0:c3p0"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "C3p0_C3p0HexSerialize",
+      "pre_tags": [
+        "C3P0HexSerializeChain"
+      ],
+      "next_tags": [
+        "AmfDeserialize"
+      ]
+    },
+    {
+      "id": "CHAIN-0075",
+      "name": "C3P0:C3P0 jndi注入",
+      "aliases": [],
+      "description": "根据一些getter和setter方法(本链采用getConnection方法)为链子入口，最终通过 com.mchange.v2.c3p0.JndiRefForwardingDataSource#dereference() 触发JNDI请求",
+      "dependencies": [
+        {
+          "group_id": "c3p0",
+          "artifact_id": "c3p0",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "C3p0JndiChain"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "C3p0_C3p0Jndi2",
+      "pre_tags": [
+        "SpecialPublicMethod"
+      ],
+      "next_tags": [
+        "Getter"
+      ]
+    },
+    {
+      "id": "CHAIN-0076",
+      "name": "C3P0 Reference 类加载",
+      "aliases": [],
+      "description": "支持LDAP远程字节码加载、本地 BeanFactory el表达式执行等",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "目前仍然影响c3p0最新版 0.10.1 版本的依赖",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "com.mchange:c3p0:0.10.1",
+        "搭配",
+        "TomcatElRef",
+        "测试中发现重复发送相同包只会触发一次Payload，想要重复触发需要重新生成payload，创建新的字节码类名才可以"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "C3p0_C3p0Reference",
+      "pre_tags": [
+        "而",
+        "0.9.5.5",
+        "版本可以重复触发相同类名字节码"
+      ],
+      "next_tags": [
+        "c3p0:c3p0"
+      ]
+    },
+    {
+      "id": "CHAIN-0077",
+      "name": "CC3.X调用toString方法",
+      "aliases": [],
+      "description": "针对CC3.X版本的toString方法调用，org.apache.commons.collections.map.AbstractHashedMap$HashEntry + CaseInsensitiveMap 可调用任意toString方法",
+      "dependencies": [
+        {
+          "group_id": "org.apache.commons",
+          "artifact_id": "commons-collections3",
+          "version": "3.x",
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "JavaNativeDeserialize"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "CaseInsensitiveMap3ToString",
+      "pre_tags": [
+        "ToString"
+      ],
+      "next_tags": [
+        "CaseInsensitiveMap4ToString"
+      ]
+    },
+    {
+      "id": "CHAIN-0078",
+      "name": "向外发起JNDI",
+      "aliases": [],
+      "description": "org.codehaus.groovy:groovy:2.4.3",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "ClosureWithJNDIChain",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [],
+      "jdk_version": "any",
+      "gadget_class": "ClosureWithJNDI"
+    },
+    {
+      "id": "CHAIN-0079",
+      "name": "执行任意命令",
+      "aliases": [],
+      "description": "org.codehaus.groovy:groovy:2.4.3",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "ClosureWithRuntimeChain",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [],
+      "jdk_version": "any",
+      "gadget_class": "ClosureWithRuntime"
+    },
+    {
+      "id": "CHAIN-0080",
+      "name": "Groovy利用链代码执行",
+      "aliases": [],
+      "description": "使用 TemplatesImpl 实现代码执行",
+      "dependencies": [
+        {
+          "group_id": "org.codehaus.groovy",
+          "artifact_id": "groovy",
+          "version": "2.4.3",
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "ClosureWithTemplatesImplChain"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "ClosureWithTemplatesImpl",
+      "pre_tags": [
+        "TemplatesImplChain"
+      ],
+      "next_tags": [
+        "CommonConfiguration"
+      ]
+    },
+    {
+      "id": "CHAIN-0081",
+      "name": "configuration2 修改系统属性",
+      "aliases": [],
+      "description": "factory: org.apache.tomcat.jdbc.naming.GenericNamingResourcesFactory",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "JNDI Reference的一种，通过GenericNamingResourcesFactory调用setter方法：org.apache.commons.configuration2.SystemConfiguration#setSystemProperties()，实现修改系统属性",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "远程加载的文件内容为：com.sun.jndi.ldap.object.trustURLCodebase=true"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "CommonConfiguration2",
+      "pre_tags": [
+        "tomcat-jdbc:org.apache.tomcat.jdbc.naming.GenericNamingResourcesFactory"
+      ],
+      "next_tags": [
+        "common-configuration2"
+      ]
+    },
+    {
+      "id": "CHAIN-0082",
+      "name": "groovy 修改系统属性",
+      "aliases": [],
+      "description": "factory: org.apache.tomcat.jdbc.naming.GenericNamingResourcesFactory",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "JNDI Reference的一种，通过 GenericNamingResourcesFactory 调用setter方法：org.apache.groovy.util.SystemUtil#setSystemPropertyFrom，实现修改系统属性",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "tomcat-jdbc"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "CommonConfigurationGroovy",
+      "pre_tags": [
+        "org.codehaus.groovy:groovy"
+      ],
+      "next_tags": [
+        "Reference"
+      ]
+    },
+    {
+      "id": "CHAIN-0083",
+      "name": "CommonDbcp2DataSource JNDI",
+      "aliases": [],
+      "description": "依赖common-dbcp包，可通过getter方法(getConnection)触发此链，转为jndi利用",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "org.apache.commons.dbcp2.datasources.SharedPoolDataSource",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "org.apache.commons:common-dbcp2"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "CommonDbcp2DataSource",
+      "pre_tags": [
+        "DataSourceChains"
+      ],
+      "next_tags": [
+        "SpecialPublicMethod"
+      ]
+    },
+    {
+      "id": "CHAIN-0084",
+      "name": "CommonDbcp2DataSource2 JNDI",
+      "aliases": [],
+      "description": "依赖common-dbcp包，可通过getter方法(getConnection)触发此链，转为jndi利用",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "org.apache.commons.dbcp2.datasources.PerUserPoolDataSource",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "org.apache.commons:common-dbcp"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "CommonDbcp2DataSource2",
+      "pre_tags": [
+        "DataSourceChains"
+      ],
+      "next_tags": [
+        "SpecialPublicMethod"
+      ]
+    },
+    {
+      "id": "CHAIN-0085",
+      "name": "Common dbcp2 加载jdbc，转为jdbc url利用",
+      "aliases": [],
+      "description": "factory: org.apache.commons.dbcp2.BasicDataSourceFactory",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "common-dbcp2",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "Reference"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "CommonDbcp2JdbcAttack",
+      "pre_tags": [
+        "JdbcUrlChains"
+      ],
+      "next_tags": [
+        "JdbcUrlWithSQLChains"
+      ]
+    },
+    {
+      "id": "CHAIN-0086",
+      "name": "CommonDbcpDataSource2 JNDI",
+      "aliases": [],
+      "description": "依赖common-dbcp包，可通过getter方法(getConnection)触发此链，转为jndi利用，使用了PerUserPoolDataSource类",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "org.apache.commons.dbcp.datasources.PerUserPoolDataSource",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "org.apache.commons:common-dbcp"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "CommonDbcpDataSource2",
+      "pre_tags": [
+        "DataSourceChains"
+      ],
+      "next_tags": [
+        "SpecialPublicMethod"
+      ]
+    },
+    {
+      "id": "CHAIN-0087",
+      "name": "Common dbcp 加载jdbc，转为jdbc url利用",
+      "aliases": [],
+      "description": "factory: org.apache.commons.dbcp.BasicDataSourceFactory",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "common-dbcp2",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "Reference"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "CommonDbcpJdbcAttack",
+      "pre_tags": [
+        "JdbcUrlChains"
+      ],
+      "next_tags": [
+        "JdbcUrlWithSQLChains"
+      ]
+    },
+    {
+      "id": "CHAIN-0088",
+      "name": "DB2 JDBC URL",
+      "aliases": [],
+      "description": "适用于jdbc rce场景，jdbc利用可以转为jndi注入利用",
+      "dependencies": [
+        {
+          "group_id": "db2",
+          "artifact_id": "com.ibm.db2.jcc.DB2Driver",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "Db2JdbcUrl"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "Db2Jdbc",
+      "pre_tags": [
+        "JdbcUrlChains"
+      ]
+    },
+    {
+      "id": "CHAIN-0089",
+      "name": "2.Derby 添加Classpath 单SQL",
+      "aliases": [],
+      "description": "适用于HikariCP和TomcatJDBC仅能执行单条SQL情况",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "CALL SYSCS_UTIL.SYSCS_SET_DATABASE_PROPERTY('derby.database.classpath'",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        },
+        {
+          "group_id": null,
+          "artifact_id": "'APP.\" + className + \"')",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "derby:org.apache.derby.jdbc.EmbeddedDriver"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "DerbyAddClassPathJdbc",
+      "pre_tags": [
+        "DerbyJdbcUrl"
+      ],
+      "next_tags": [
+        "JdbcUrlChains"
+      ]
+    },
+    {
+      "id": "CHAIN-0090",
+      "name": "5.Derby 调用cmd函数 单SQL",
+      "aliases": [],
+      "description": "适用于HikariCP和TomcatJDBC仅能执行单条SQL情况",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "CALL cmd('\" + cmd + \"')",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "derby:org.apache.derby.jdbc.EmbeddedDriver"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "DerbyCommandJdbc",
+      "pre_tags": [
+        "DerbyJdbcUrl"
+      ],
+      "next_tags": [
+        "JdbcUrlWithSQLChains"
+      ]
+    },
+    {
+      "id": "CHAIN-0091",
+      "name": "3.Derby CreateCmdProc 单SQL",
+      "aliases": [],
+      "description": "适用于HikariCP和TomcatJDBC仅能执行单条SQL情况",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "CREATE PROCEDURE cmd(IN cmd VARCHAR(255)) PARAMETER STYLE JAVA READS SQL DATA LANGUAGE JAVA EXTERNAL NAME '\" + className + \".exec'",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "derby:org.apache.derby.jdbc.EmbeddedDriver"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "DerbyCreateCmdProcJdbc",
+      "pre_tags": [
+        "DerbyJdbcUrl"
+      ],
+      "next_tags": [
+        "JdbcUrlChains"
+      ]
+    },
+    {
+      "id": "CHAIN-0092",
+      "name": "Derby 创建数据库 无SQL",
+      "aliases": [],
+      "description": "适用于jdbc rce场景，并且可执行sql语句的场景，例如jndi配合Datasource场景。无sql",
+      "dependencies": [
+        {
+          "group_id": "derby",
+          "artifact_id": "org.apache.derby.jdbc.EmbeddedDriver",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "DerbyJdbcUrl"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "DerbyCreateJdbc",
+      "pre_tags": [
+        "JdbcUrlChains"
+      ]
+    },
+    {
+      "id": "CHAIN-0093",
+      "name": "4.Derby CreateRevProc 单SQL",
+      "aliases": [],
+      "description": "适用于HikariCP和TomcatJDBC仅能执行单条SQL情况",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "CREATE PROCEDURE rev(IN host VARCHAR(255)",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        },
+        {
+          "group_id": null,
+          "artifact_id": "IN port VARCHAR(255)) PARAMETER STYLE JAVA READS SQL DATA LANGUAGE JAVA EXTERNAL NAME '\" + className + \".rev'",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "derby:org.apache.derby.jdbc.EmbeddedDriver"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "DerbyCreateRevProcJdbc",
+      "pre_tags": [
+        "DerbyJdbcUrl"
+      ],
+      "next_tags": [
+        "JdbcUrlChains"
+      ]
+    },
+    {
+      "id": "CHAIN-0094",
+      "name": "Derby 删除数据库 无SQL",
+      "aliases": [],
+      "description": "适用于jdbc rce场景，例如jndi配合Datasource场景",
+      "dependencies": [
+        {
+          "group_id": "derby",
+          "artifact_id": "org.apache.derby.jdbc.EmbeddedDriver",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "DerbyJdbcUrl"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "DerbyDropJdbc",
+      "pre_tags": [
+        "JdbcUrlChains"
+      ]
+    },
+    {
+      "id": "CHAIN-0095",
+      "name": "1.Derby 远程加载jar包 单SQL 仅适用于JNDI模块",
+      "aliases": [],
+      "description": "适用于HikariCP和TomcatJDBC仅能执行单条SQL情况",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "CALL SQLJ.INSTALL_JAR('\" + jarHttpUrl +\"'",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        },
+        {
+          "group_id": null,
+          "artifact_id": "'APP.\" + className + \"'",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        },
+        {
+          "group_id": null,
+          "artifact_id": "0)",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "derby:org.apache.derby.jdbc.EmbeddedDriver"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "DerbyInstallJarJdbc",
+      "pre_tags": [
+        "DerbyJdbcUrl"
+      ],
+      "next_tags": [
+        "JdbcUrlWithSQLChains"
+      ]
+    },
+    {
+      "id": "CHAIN-0096",
+      "name": "Derby 远程加载jar包-多SQL 仅适用于JNDI模块",
+      "aliases": [],
+      "description": "本链会从远程获取jar包并初始化，注意这里不会RCE，后续RCE需要调用里面的函数",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "总共4条sql语句，加载jar包、创建PROCEDURE",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "sqlList.add(\"CALL",
+        "SQLJ.INSTALL_JAR('\"",
+        "+",
+        "jarHttpUrl",
+        "+\"',",
+        "'APP.\"",
+        "+",
+        "className",
+        "+",
+        "\"',",
+        "0)\");"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "DerbyInstallJdbc",
+      "pre_tags": [
+        "sqlList.add(\"CALL",
+        "SYSCS_UTIL.SYSCS_SET_DATABASE_PROPERTY('derby.database.classpath',",
+        "'APP.\"",
+        "+",
+        "className",
+        "+",
+        "\"')\");"
+      ],
+      "next_tags": [
+        "sqlList.add(\"CREATE",
+        "PROCEDURE",
+        "cmd(IN",
+        "cmd",
+        "VARCHAR(255))",
+        "PARAMETER",
+        "STYLE",
+        "JAVA",
+        "READS",
+        "SQL",
+        "DATA",
+        "LANGUAGE",
+        "JAVA",
+        "EXTERNAL",
+        "NAME",
+        "'\"",
+        "+",
+        "className",
+        "+",
+        "\".exec'\");"
+      ]
+    },
+    {
+      "id": "CHAIN-0097",
+      "name": "Derby加载任意字节码",
+      "aliases": [],
+      "description": "适用于Nacos sql注入rce场景",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "derby",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "Other"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "DerbyRceSql",
+      "pre_tags": [
+        "BytecodeConvertTag"
+      ],
+      "next_tags": [
+        "DerbyReverseShellJdbc"
+      ]
+    },
+    {
+      "id": "CHAIN-0098",
+      "name": "Derby slave远程反序列化 无SQL",
+      "aliases": [],
+      "description": "适用于jdbc rce场景，连接指定ip的4851端口，接受反序列化数据，此链可将jdbc利用可以转为Java deserialize利用",
+      "dependencies": [
+        {
+          "group_id": "derby",
+          "artifact_id": "org.apache.derby.jdbc.EmbeddedDriver",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "DerbyJdbcUrl"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "DerbySlaveJdbc",
+      "pre_tags": [
+        "JdbcUrlChains"
+      ]
+    },
+    {
+      "id": "CHAIN-0099",
+      "name": "达梦 DataSource JNDI",
+      "aliases": [],
+      "description": "dm.jdbc.driver.DmdbRowSet",
+      "dependencies": [
+        {
+          "group_id": "com.dameng",
+          "artifact_id": "DmJdbcDriver18",
+          "version": "8.1.2.141",
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "DataSourceChains"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "DmdbRowSet",
+      "pre_tags": [
+        "Getter"
+      ]
+    },
+    {
+      "id": "CHAIN-0100",
+      "name": "发起DNSLog请求",
+      "aliases": [],
+      "description": "发起DNSLog请求的字节码，用于探测字节码是否可以执行成功",
+      "dependencies": [],
+      "tags": [],
+      "jdk_version": "any",
+      "gadget_class": "DNSLog"
+    },
+    {
+      "id": "CHAIN-0101",
+      "name": "发起DNSLog和Http请求",
+      "aliases": [],
+      "description": "本质是发起Http请求，并Post当前调用栈、环境变量信息，该链可同时探测DNSLog和Http出网",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "适用于一键探测DNSLog、HTTP出网，在 JNDIShowHand 链中常用",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "注意，不适合探测没有配置DNS的服务器，可单独使用",
+        "HTTPReq",
+        "链进行单独探测"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "DNSLogAndHttp",
+      "pre_tags": [
+        "本链会通过指定dnslog的子域名进行回显当前使用的gadget链、操作系统信息"
+      ],
+      "next_tags": [
+        "响应示例:",
+        "deser.fastjson.templatesimpl.windows.xxx.eyes.sh"
+      ]
+    },
+    {
+      "id": "CHAIN-0102",
+      "name": "发起DNSLog请求2",
+      "aliases": [],
+      "description": "发起DNSLog请求的字节码，用于探测字节码是否可以执行成功，和DNSLog1的区别就是该链会包含当前利用链信息，以及目标系统信息，会自动在DNS头部额外添加一些子域名信息",
+      "dependencies": [],
+      "tags": [],
+      "jdk_version": "any",
+      "gadget_class": "DNSLogWithInfo"
+    },
+    {
+      "id": "CHAIN-0103",
+      "name": "生成tomcat-docbase需要的字节码",
+      "aliases": [],
+      "description": "参考 https://github.com/luelueking/CVE-2022-25845-In-Spring，文件路径需要与类名一致。",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "例如类名为org.example.Exception，文件路径则为/tmp/tomcat-docbase.xxxxxxxxxxxxx/WEB-INF/classes/org/example",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "通过以下payload触发"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "Docbase",
+      "pre_tags": [
+        "{"
+      ],
+      "next_tags": [
+        "\"@type\":\"java.lang.Exception\","
+      ]
+    },
+    {
+      "id": "CHAIN-0104",
+      "name": "下载文件并执行",
+      "aliases": [],
+      "description": "下载文件并执行的字节码，自动识别win/linux",
+      "dependencies": [],
+      "tags": [],
+      "jdk_version": "any",
+      "gadget_class": "DownloadExec"
+    },
+    {
+      "id": "CHAIN-0105",
+      "name": "DruidXADataSource JDBC URL Attack",
+      "aliases": [],
+      "description": "getter 触发此链，通过 com.alibaba.druid.pool.xa.DruidXADataSource 类，转为 jdbc url相关利用，使用了DruidXADataSource类",
+      "dependencies": [
+        {
+          "group_id": "com.alibaba",
+          "artifact_id": "druid",
+          "version": "1.2.16",
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "DataSourceChains"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "DruidDataSource",
+      "pre_tags": [
+        "Getter"
+      ]
+    },
+    {
+      "id": "CHAIN-0106",
+      "name": "JdbcUrlWithSQLChains",
+      "aliases": [],
+      "description": "DruidDataSource2",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "DruidDataSource JDBC URL Attack",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "getter",
+        "触发此链，通过",
+        "com.alibaba.druid.pool.DruidDataSource",
+        "类，转为",
+        "jdbc",
+        "url相关利用"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "JdbcUrlChains",
+      "pre_tags": [
+        "com.alibaba:druid:1.2.16"
+      ],
+      "next_tags": [
+        "DataSourceChains"
+      ]
+    },
+    {
+      "id": "CHAIN-0107",
+      "name": "EventListenerList 调用toString",
+      "aliases": [],
+      "description": "EventListenerList#readObject() 可以调用任意对象的 toString() 方法",
+      "dependencies": [
+        {
+          "group_id": "current suid",
+          "artifact_id": " -5677132037850737084",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "jdk:javax.swing.event.EventListenerList"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "EventListenerListToString",
+      "pre_tags": [
+        "JavaNativeDeserialize"
+      ],
+      "next_tags": [
+        "ToString"
+      ]
+    },
+    {
+      "id": "CHAIN-0108",
+      "name": "FakeMySQL PipeFile",
+      "aliases": [],
+      "description": "FakeMySQLPipeFile",
+      "dependencies": [],
+      "tags": [
+        "JavaNativeDeserializePayload"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "FakeMySQLPipeFile",
+      "pre_tags": [
+        "FakeMySQLReadFile"
+      ],
+      "next_tags": [
+        "FakeMySQL",
+        "读取文件"
+      ]
+    },
+    {
+      "id": "CHAIN-0109",
+      "name": "FakeMySQL SSRF",
+      "aliases": [],
+      "description": "FakeMySQLRead",
+      "dependencies": [],
+      "tags": [],
+      "jdk_version": "any",
+      "gadget_class": "FakeMySQLSSRF"
+    },
+    {
+      "id": "CHAIN-0110",
+      "name": "Fastjson反序列化链",
+      "aliases": [],
+      "description": "BadAttributeValueExpException.readObject() => JSONArray.toString() => getter，这里使用了Hashmap的引用机制绕过Fastjson反序列化的检测",
+      "dependencies": [
+        {
+          "group_id": "com.alibaba",
+          "artifact_id": "fastjson",
+          "version": "1.x",
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "JavaNativeDeserialize"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "Fastjson",
+      "pre_tags": [
+        "TemplatesImplChain"
+      ],
+      "next_tags": [
+        "LdapAttributeChain"
+      ]
+    },
+    {
+      "id": "CHAIN-0111",
+      "name": "Groovy 1.2.83",
+      "aliases": [],
+      "description": "需要发送两个payload才能实现远程加载 groovy jar",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "恶意 Groovy jar 包可在 「OtherPayload -> GroovyJarConvert」 中生成",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "org.codehaus:groovy"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "FastjsonGroovy",
+      "pre_tags": [
+        "1.2.76",
+        "<=",
+        "fastjson",
+        "<=",
+        "1.2.83",
+        "autoTypeEnabled"
+      ],
+      "next_tags": [
+        "FastjsonPayload"
+      ]
+    },
+    {
+      "id": "CHAIN-0112",
+      "name": "H2Jdbc 1.2.47",
+      "aliases": [],
+      "description": "com.h2database:h2 <= 2.2.224",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "fastjson <= 1.2.61",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "FastjsonPayload"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "FastjsonH2Jdbc",
+      "pre_tags": [
+        "BytecodeConvertTag"
+      ],
+      "next_tags": [
+        "FastjsonJdbcRowSetImpl"
+      ]
+    },
+    {
+      "id": "CHAIN-0113",
+      "name": "Mysql-connector 1.2.68",
+      "aliases": [],
+      "description": "mysql",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "fastjson <= 1.2.68",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "FastjsonPayload"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "FastjsonMySQLJdbc"
+    },
+    {
+      "id": "CHAIN-0114",
+      "name": "postgresql 1.2.68",
+      "aliases": [],
+      "description": "org.postgresql:postgresql:org.postgresql.Driver",
+      "dependencies": [
+        {
+          "group_id": "9.4.1208 <= org.postgresql",
+          "artifact_id": "postgresql < 42.2.25",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "42.3.0",
+        "<=",
+        "org.postgresql:postgresql",
+        "<",
+        "42.3.2"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "FastjsonPostgreSQLJdbc",
+      "pre_tags": [
+        "FastjsonPayload"
+      ]
+    },
+    {
+      "id": "CHAIN-0115",
+      "name": "需要toString链触发的Fastjson反序列化链",
+      "aliases": [],
+      "description": "需要toString触发此链，JSONArray.toString() => getter",
+      "dependencies": [
+        {
+          "group_id": "com.alibaba",
+          "artifact_id": "fastjson",
+          "version": "1.2.x",
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "ToString"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "FastjsonToString1",
+      "pre_tags": [
+        "TemplatesImplChain"
+      ],
+      "next_tags": [
+        "LdapAttributeChain"
+      ]
+    },
+    {
+      "id": "CHAIN-0116",
+      "name": "DNSLog探测类",
+      "aliases": [],
+      "description": "反序列化向外部发起Dns请求可批量探测目标是否存在对应的类",
+      "dependencies": [
+        {
+          "group_id": "参数使用优先级",
+          "artifact_id": " 自定义类探测 > 本地文件 > 内置参数探测",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "JavaNativeDeserialize"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "FindClass"
+    },
+    {
+      "id": "CHAIN-0117",
+      "name": "DNSLog探测类2-指定suid",
+      "aliases": [],
+      "description": "精确探测目标类版本",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "指定类的 serialVersionUID 字段",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        },
+        {
+          "group_id": null,
+          "artifact_id": "如果目标存在该类且suid能够与之相对应才会向外发起DNSLog请求",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "如果只想探测类是否存在请使用",
+        "FindClass"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "FindClass2",
+      "pre_tags": [
+        "JavaNativeDeserialize"
+      ]
+    },
+    {
+      "id": "CHAIN-0118",
+      "name": "Sleep探测类",
+      "aliases": [],
+      "description": "可通过反序列化大量时间消耗来探测类",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "也可以通过该链探测反序列化点",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "JavaNativeDeserialize"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "FindClassByBomb"
+    },
+    {
+      "id": "CHAIN-0119",
+      "name": "Sleep探测类2-指定suid",
+      "aliases": [],
+      "description": "精确探测目标类版本",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "可指定的类的 serialVersionUID 字段值",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        },
+        {
+          "group_id": null,
+          "artifact_id": "目标环境存在该类且与suid相对应才会进行 “sleep”",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        },
+        {
+          "group_id": null,
+          "artifact_id": "如果只想探测类的存在请使用 FindClassByBomb",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "JavaNativeDeserialize"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "FindClassByBomb2"
+    },
+    {
+      "id": "CHAIN-0120",
+      "name": "freemarker表达式加载字节码",
+      "aliases": [],
+      "description": "freemarker 调用 SpEL 执行字节码",
+      "dependencies": [
+        {
+          "group_id": "Reference",
+          "artifact_id": " https",
+          "version": "//www.cnblogs.com/CoLo/p/16706091.html",
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "freemarker"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "FreemarkerConvert",
+      "pre_tags": [
+        "SpEL"
+      ],
+      "next_tags": [
+        "Freemarker_Expr"
+      ]
+    },
+    {
+      "id": "CHAIN-0121",
+      "name": "Groovy反序列化链",
+      "aliases": [],
+      "description": "org.codehaus.groovy:groovy:2.4.3",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "JavaNativeDeserialize",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "ClosureWithTemplatesImplChain"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "Groovy",
+      "pre_tags": [
+        "ClosureWithJNDIChain"
+      ],
+      "next_tags": [
+        "ClosureWithRuntimeChain"
+      ]
+    },
+    {
+      "id": "CHAIN-0122",
+      "name": "Groovy表达式字符串",
+      "aliases": [],
+      "description": "将byte[]字节码转换为Groovy表达式字符串",
+      "dependencies": [
+        {
+          "group_id": "groovy",
+          "artifact_id": "groovy.lang.GroovyShell",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "Groovy_Expr"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "GroovyConvert",
+      "pre_tags": [
+        "Expression"
+      ],
+      "next_tags": [
+        "BytecodeConvertTag"
+      ]
+    },
+    {
+      "id": "CHAIN-0123",
+      "name": "Groovy表达式字符串1",
+      "aliases": [],
+      "description": "含有/bin/sh -c 或 cmd /c 的简单execute()函数命令执行",
+      "dependencies": [
+        {
+          "group_id": "groovy",
+          "artifact_id": "groovy.lang.GroovyShell",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "Groovy_Expr"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "GroovyExec2Convert",
+      "pre_tags": [
+        "Expression"
+      ]
+    },
+    {
+      "id": "CHAIN-0124",
+      "name": "将字节码转为Groovy Jar包字节流",
+      "aliases": [],
+      "description": "适用于Fastjson远程加载Groovy Jar包 RCE场景",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "会自动在jar包内创建 META-INF/services/org.codehaus.groovy.transform.ASTTransformation 文件，并将文件内容设置字节码类名",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "org.codehaus.groovy:groovy"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "GroovyJarConvert",
+      "pre_tags": [
+        "Other"
+      ],
+      "next_tags": [
+        "BytecodeConvertTag"
+      ]
+    },
+    {
+      "id": "CHAIN-0125",
+      "name": "GroovyWithRef",
+      "aliases": [],
+      "description": "Groovy链",
+      "dependencies": [
+        {
+          "group_id": "org.codehaus.groovy",
+          "artifact_id": "groovy",
+          "version": "2.4.3",
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "HessianDeserialize"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "Groovy_Expr",
+      "pre_tags": [
+        "JdbcRowSetImplChain"
+      ],
+      "next_tags": [
+        "H2CreateDirRef"
+      ]
+    },
+    {
+      "id": "CHAIN-0126",
+      "name": "生成h2 sql文件",
+      "aliases": [],
+      "description": "通过Runtime执行任意命令，本链用于配合h2远程加载sql的姿势",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "derby",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "Other"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "H2ExecSql"
+    },
+    {
+      "id": "CHAIN-0127",
+      "name": "H2 JDBC URL Groovy命令执行",
+      "aliases": [],
+      "description": "适用于jdbc rce场景，通过H2执行Groovy表达式，这里采用了最简单的getRuntime去执行命令，Payload比较简短，前提是需有Groovy依赖",
+      "dependencies": [
+        {
+          "group_id": "com.h2database",
+          "artifact_id": "h2",
+          "version": "org.h2.Driver",
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "org.codehaus.groovy:groovy"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "H2GroovyExecJdbc",
+      "pre_tags": [
+        "H2JdbcUrl"
+      ],
+      "next_tags": [
+        "JdbcUrlChains"
+      ]
+    },
+    {
+      "id": "CHAIN-0128",
+      "name": "H2 JDBC URL Java命令执行1",
+      "aliases": [],
+      "description": "适用于jdbc rce场景，通过H2执行Java代码，这里采用了最简单的getRuntime去执行命令，Payload比较简短",
+      "dependencies": [
+        {
+          "group_id": "com.h2database",
+          "artifact_id": "h2",
+          "version": "org.h2.Driver",
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "H2JdbcUrl"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "H2JavaExecJdbc1",
+      "pre_tags": [
+        "JdbcUrlChains"
+      ]
+    },
+    {
+      "id": "CHAIN-0129",
+      "name": "H2 JDBC URL Java命令执行2",
+      "aliases": [],
+      "description": "适用于jdbc rce场景，通过H2的 TRIGGER 功能执行Java代码，这里采用了最简单的getRuntime去执行命令，Payload比较简短",
+      "dependencies": [
+        {
+          "group_id": "com.h2database",
+          "artifact_id": "h2",
+          "version": "org.h2.Driver",
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "All",
+        "JDk"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "H2JavaExecJdbc2",
+      "pre_tags": [
+        "H2JdbcUrl"
+      ],
+      "next_tags": [
+        "JdbcUrlChains"
+      ]
+    },
+    {
+      "id": "CHAIN-0130",
+      "name": "H2 JDBC URL Java加载任意字节码1",
+      "aliases": [],
+      "description": "适用于jdbc rce场景，通过H2执行任意Java代码，Base64解码逻辑采用了高度兼容写法，Payload较大，本链实现了加载任意字节码",
+      "dependencies": [
+        {
+          "group_id": "已优化该Payload：https",
+          "artifact_id": "//github.com/vulhub/java-chains/issues/24",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "com.h2database:h2:org.h2.Driver"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "H2JavaJdbc1",
+      "pre_tags": [
+        "H2JdbcUrl"
+      ],
+      "next_tags": [
+        "JdbcUrlChains"
+      ]
+    },
+    {
+      "id": "CHAIN-0131",
+      "name": "H2 JDBC URL js命令执行",
+      "aliases": [],
+      "description": "适用于jdbc rce场景，通过H2执行js表达式，这里采用了最简单的getRuntime去执行命令，Payload比较简短",
+      "dependencies": [
+        {
+          "group_id": "com.h2database",
+          "artifact_id": "h2",
+          "version": "org.h2.Driver",
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "H2JdbcUrl"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "H2JsExecJdbc",
+      "pre_tags": [
+        "JdbcUrlChains"
+      ]
+    },
+    {
+      "id": "CHAIN-0132",
+      "name": "H2 JDBC URL 远程加载执行sql文件",
+      "aliases": [],
+      "description": "适用于jdbc rce场景，通过H2远程加载sql语句，执行命令/字节码",
+      "dependencies": [
+        {
+          "group_id": "com.h2database",
+          "artifact_id": "h2",
+          "version": "org.h2.Driver",
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "H2JdbcUrl"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "H2RemoteJdbc",
+      "pre_tags": [
+        "JdbcUrlChains"
+      ]
+    },
+    {
+      "id": "CHAIN-0133",
+      "name": "Hessian JNDI SSRF",
+      "aliases": [],
+      "description": "factory: com.caucho.burlap.client.BurlapProxyFactory",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "GET类型可控url的SSRF",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "com.caucho:hessian:4.0.38"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "HessianSSRF",
+      "pre_tags": [
+        "Reference"
+      ]
+    },
+    {
+      "id": "CHAIN-0134",
+      "name": "DriverManagerConnectionProviderImp JDBC URL Attack",
+      "aliases": [],
+      "description": "getter 触发此链，通过 org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImp 类，转为 jdbc url相关利用 serialVersionUID = -3339733132699493320L",
+      "dependencies": [
+        {
+          "group_id": "org.hibernate",
+          "artifact_id": "4.1.2.Fina - 4.1.12.Fina",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "DataSourceChains"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "Hiber2jdbc",
+      "pre_tags": [
+        "Getter"
+      ],
+      "next_tags": [
+        "Serializable"
+      ]
+    },
+    {
+      "id": "CHAIN-0135",
+      "name": "HikariCP 加载jdbc，转为jdbc url利用",
+      "aliases": [],
+      "description": "factory: com.zaxxer.hikari.HikariJNDIFactory",
+      "dependencies": [
+        {
+          "group_id": "注意加载sql时只能加载一条，并且sql结尾不能有分号; https",
+          "artifact_id": "//github.com/vulhub/java-chains/issues/12",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "hikari"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "HikariJdbcAttack",
+      "pre_tags": [
+        "Reference"
+      ],
+      "next_tags": [
+        "JdbcUrlChains"
+      ]
+    },
+    {
+      "id": "CHAIN-0136",
+      "name": "Hsql CALL defineClass 加载字节码",
+      "aliases": [],
+      "description": "调用 org.springframework.util.ReflectionUtils#defineClass 实现加载字节码",
+      "dependencies": [
+        {
+          "group_id": "hsqldb",
+          "artifact_id": "org.hsqldb.jdbcDriver",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "spring-core"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "HsqldbDefineClassJdbc",
+      "pre_tags": [
+        "HsqldbJdbcUrl"
+      ],
+      "next_tags": [
+        "JdbcUrlWithSQLChains"
+      ]
+    },
+    {
+      "id": "CHAIN-0137",
+      "name": "Hsql 设置系统环境变量",
+      "aliases": [],
+      "description": "调用 java.lang.System#setProperty 设置系统环境变量",
+      "dependencies": [
+        {
+          "group_id": "hsqldb",
+          "artifact_id": "org.hsqldb.jdbcDriver",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "HsqldbJdbcUrl"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "HsqldbPropertyJdbc",
+      "pre_tags": [
+        "JdbcUrlWithSQLChains"
+      ]
+    },
+    {
+      "id": "CHAIN-0138",
+      "name": "发起http请求",
+      "aliases": [],
+      "description": "发起http请求的字节码，可探测HTTP/TCP出网，用于探测字节码是否执行成功、判断目标是否出网，注意env、调用栈信息为明文",
+      "dependencies": [],
+      "tags": [],
+      "jdk_version": "any",
+      "gadget_class": "HTTPReq"
+    },
+    {
+      "id": "CHAIN-0139",
+      "name": "可通过getter方法(getDataSource)触发此链，转为jndi利用",
+      "aliases": [],
+      "description": "无法在 Rome 链中使用，因为 Rome 在调用getter方法时会获取不到DSFactory.class的property描述，也就无法触发getDataSource",
+      "dependencies": [
+        {
+          "group_id": "cn.hutool.hutool-all",
+          "artifact_id": "5.8.29",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "DataSourceChains"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "HutoolJndiDSFactory",
+      "pre_tags": [
+        "Getter"
+      ],
+      "next_tags": [
+        "NotForRome"
+      ]
+    },
+    {
+      "id": "CHAIN-0140",
+      "name": "可通过getter方法(getDataSource)触发此链，转为jdbc利用",
+      "aliases": [],
+      "description": "核心是 cn.hutool.db.ds.pooled.PooledFactory#getDataSource 方法",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "无法在Rome链中使用，因为 Rome 调用 Getter 时，由于获取不到 DSFactory.class的property描述，也就无法触发 getDataSource",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "cn.hutool.hutool-all:5.8.29"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "HutoolPooledDSFactory",
+      "pre_tags": [
+        "DataSourceChains"
+      ],
+      "next_tags": [
+        "Getter"
+      ]
+    },
+    {
+      "id": "CHAIN-0141",
+      "name": "Jackson反序列化链",
+      "aliases": [],
+      "description": "BadAttributeValueExpException#readObject() => POJONode#toString() => getter，会不定顺序调用对象*所有字段*中的getter方法",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "此链不稳定，因为获取的顺序会有一定的不稳定性，有时 outputProperties 会在 stylesheetDOM 之前，这个时候反序列化攻击可以成功",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "com.fasterxml.jackson.core:jackson-databind>2.9"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "Jackson",
+      "pre_tags": [
+        "JavaNativeDeserialize"
+      ],
+      "next_tags": [
+        "TemplatesImplWrapperChain"
+      ]
+    },
+    {
+      "id": "CHAIN-0142",
+      "name": "Java Powershell 执行命令处理",
+      "aliases": [],
+      "description": "处理 Runtime Exec 执行某些命令的问题",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "Other",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [],
+      "jdk_version": "any",
+      "gadget_class": "JavaRunCmdPs"
+    },
+    {
+      "id": "CHAIN-0143",
+      "name": "JavassistWeld1链",
+      "aliases": [],
+      "description": "javassist:javassist:3.12.1.GA",
+      "dependencies": [
+        {
+          "group_id": "org.jboss.weld",
+          "artifact_id": "weld-core",
+          "version": "1.1.33.Final",
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "javax.enterprise:cdi-api:1.0-SP1"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "JavassistWeld1",
+      "pre_tags": [
+        "javax.interceptor:javax.interceptor-api:3.1"
+      ],
+      "next_tags": [
+        "org.jboss.interceptor:jboss-interceptor-spi:2.0.0.Final"
+      ]
+    },
+    {
+      "id": "CHAIN-0144",
+      "name": "jdk7u21反序列化链",
+      "aliases": [],
+      "description": "JavaNativeDeserialize",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "TemplatesImplChain",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "JegGadget"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "Jdk7u21",
+      "pre_tags": [
+        "调用",
+        "Jeg",
+        "生成回显字节码"
+      ],
+      "next_tags": [
+        "方法一、明文传参及回显"
+      ]
+    },
+    {
+      "id": "CHAIN-0145",
+      "name": "生成 Jetty 命令执行明文回显的字节码",
+      "aliases": [],
+      "description": "Bytecode",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "Echo",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [],
+      "jdk_version": "any",
+      "gadget_class": "JettyEcho"
+    },
+    {
+      "id": "CHAIN-0146",
+      "name": "将byte[]字节码转换为Jexl表达式字符串",
+      "aliases": [],
+      "description": "内部使用js引擎来实现加载字节码",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "Jxel",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "Jxel_Expr"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "JexlConvert",
+      "pre_tags": [
+        "Expression"
+      ],
+      "next_tags": [
+        "BytecodeConvertTag"
+      ]
+    },
+    {
+      "id": "CHAIN-0147",
+      "name": "将byte[]字节码转换为JinJava表达式字符串",
+      "aliases": [],
+      "description": "内部使用js引擎来实现加载字节码",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "jinjava",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "JinJava_Expr"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "JinJavaConvert",
+      "pre_tags": [
+        "Expression"
+      ],
+      "next_tags": [
+        "BytecodeConvertTag"
+      ]
+    },
+    {
+      "id": "CHAIN-0148",
+      "name": "Jre8u20反序列化链",
+      "aliases": [],
+      "description": "JavaNativeDeserialize",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "TemplatesImplChain",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "JRMPClient"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "JRE8u20",
+      "pre_tags": [
+        "JRMPClient"
+      ],
+      "next_tags": [
+        "java.rmi.server.RemoteObjectInvocationHandler"
+      ]
+    },
+    {
+      "id": "CHAIN-0149",
+      "name": "JRMPClient3",
+      "aliases": [],
+      "description": "javax.management.remote.rmi.RMIConnectionImpl_Stub",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "JavaNativeDeserialize",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [],
+      "jdk_version": "any",
+      "gadget_class": "JRMPClient3"
+    },
+    {
+      "id": "CHAIN-0150",
+      "name": "JRMPListener",
+      "aliases": [],
+      "description": "java.rmi.server.UnicastRemoteObject",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "反序列化此 payload 后，目标将会监听设置的端口，配合 exploit 模块中的 JRMPClient 即可RCE",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "JavaNativeDeserialize"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "JRMPListener"
+    },
+    {
+      "id": "CHAIN-0151",
+      "name": "将byte[]字节码转换为Js表达式字符串",
+      "aliases": [],
+      "description": "使用ClassLoader进行加载,最大程度上提供类兼容",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "8 <= jdk <= 14",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "Js_Expr"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "JsConver3",
+      "pre_tags": [
+        "Expression"
+      ],
+      "next_tags": [
+        "BytecodeConvertTag"
+      ]
+    },
+    {
+      "id": "CHAIN-0152",
+      "name": "JSON1链",
+      "aliases": [],
+      "description": "net.sf.json-lib 链",
+      "dependencies": [
+        {
+          "group_id": "net.sf.json-lib",
+          "artifact_id": "json-lib",
+          "version": "jar",
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "org.springframework:spring-aop:4.1.4.RELEASE"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "JSON1",
+      "pre_tags": [
+        "aopalliance:aopalliance:1.0"
+      ],
+      "next_tags": [
+        "commons-logging:commons-logging:1.2"
+      ]
+    },
+    {
+      "id": "CHAIN-0153",
+      "name": "Jython1链",
+      "aliases": [],
+      "description": "pythonCode和localPath参数二选一, 执行完后记得删除目标残留的py文件",
+      "dependencies": [
+        {
+          "group_id": "org.python",
+          "artifact_id": "jython-standalone",
+          "version": "2.5.2",
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "JavaNativeDeserialize"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "Jython1"
+    },
+    {
+      "id": "CHAIN-0154",
+      "name": "加载BCEL字节码",
+      "aliases": [],
+      "description": "本链通过 com.sun.org.apache.bcel.internal.util.JavaWrapper._main(String[] argv) 实现加载任意BCEL字节码",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "注意 SwingLazyValue.createValue 加载类的过程中classLoader为null，只能调用到rt.jar中的类",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "jdk8",
+        "<=",
+        "8u251"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "LazyValueWithBcel",
+      "pre_tags": [
+        "LazyValueChain"
+      ],
+      "next_tags": [
+        "BCEL_Expr"
+      ]
+    },
+    {
+      "id": "CHAIN-0155",
+      "name": "Groovy链",
+      "aliases": [],
+      "description": "通过 groovy.util.Eval 实现 Groovy 代码执行",
+      "dependencies": [
+        {
+          "group_id": "org.codehaus.groovy",
+          "artifact_id": "groovy",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "LazyValueChain"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "LazyValueWithGroovy",
+      "pre_tags": [
+        "Groovy_Expr"
+      ],
+      "next_tags": [
+        "LazyValueWithJNDI"
+      ]
+    },
+    {
+      "id": "CHAIN-0156",
+      "name": "发起RMI连接",
+      "aliases": [],
+      "description": "LazyValueChain",
+      "dependencies": [],
+      "tags": [],
+      "jdk_version": "any",
+      "gadget_class": "LazyValueWithRMI"
+    },
+    {
+      "id": "CHAIN-0157",
+      "name": "服务器延迟",
+      "aliases": [],
+      "description": "通过Thread.sleep来模拟服务器延迟，模拟网络延迟",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "LazyValueChain",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [],
+      "jdk_version": "any",
+      "gadget_class": "LazyValueWithSleep"
+    },
+    {
+      "id": "CHAIN-0158",
+      "name": "加载本地jar包",
+      "aliases": [],
+      "description": "LazyValueChain",
+      "dependencies": [],
+      "tags": [],
+      "jdk_version": "any",
+      "gadget_class": "LazyValueWithUrlClassLoader"
+    },
+    {
+      "id": "CHAIN-0159",
+      "name": "LdapAttribute JNDI",
+      "aliases": [],
+      "description": "利用 com.sun.jndi.ldap.LdapAttribute#getAttributeDefinition() 发起JNDI请求",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "该类特点是即使在 Java 1.4 低版本中仍然存在，但是 TemplatesImpl 和 JdbcRowSetImpl 类不存在，是一种 sink 点的平替",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "不适用于Hessian反序列化与Rome链中"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "LdapAttribute",
+      "pre_tags": [
+        "jdk:com.sun.jndi.ldap.LdapAttribute"
+      ],
+      "next_tags": [
+        "LdapAttributeChain"
+      ]
+    },
+    {
+      "id": "CHAIN-0160",
+      "name": "远程字节码加载",
+      "aliases": [],
+      "description": "LDAP加载字节码姿势，等同于 JNDIExploit 中的 Basic 利用方式",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "此链需要另外手动开启 HTTP 服务去挂载字节码，请求字节码uri路径为 Evil.class",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "code:",
+        "new",
+        "Reference(this.className,",
+        "this.className,",
+        "this.url)"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "LdapClassLoader",
+      "pre_tags": [
+        "在",
+        "C3p0",
+        "链下也可以url远程加载/本地加载jar:",
+        "https://github.com/B0T1eR/ysoSimple/blob/master/ysoSimple-Wiki.md#c3p02-urlclassloader%E7%B1%BB%E5%8A%A0%E8%BD%BD"
+      ],
+      "next_tags": [
+        "<=jdk8u113"
+      ]
+    },
+    {
+      "id": "CHAIN-0161",
+      "name": "Load NativeLib RCE",
+      "aliases": [],
+      "description": "factory: org.apache.naming.factory.BeanFactory",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "通过BeanFactory调用单String方法：com.sun.glass.utils.NativeLibLoader，配合文件上传加载动态连接库实现RCE",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "tomcat"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "LoadNativeLibRef",
+      "pre_tags": [
+        "jdk:com.sun.glass.utils.NativeLibLoader"
+      ],
+      "next_tags": [
+        "ResourceRef"
+      ]
+    },
+    {
+      "id": "CHAIN-0162",
+      "name": "MapMessage二次反序列化",
+      "aliases": [],
+      "description": "getKey()方法触发本链，实现二次反序列化",
+      "dependencies": [
+        {
+          "group_id": "org.apache.tomcat",
+          "artifact_id": "catalina-tribes",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "MapMessageChain"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "MapMessage",
+      "pre_tags": [
+        "Getter"
+      ],
+      "next_tags": [
+        "JavaNativeDeserializePayload"
+      ]
+    },
+    {
+      "id": "CHAIN-0163",
+      "name": "C3P0 jndi注入",
+      "aliases": [],
+      "description": "根据一些getter和setter方法(本链采用getConnection方法)为链子入口，最终通过 com.mchange.v2.c3p0.JndiRefForwardingDataSource#dereference() 触发JNDI请求",
+      "dependencies": [
+        {
+          "group_id": "com.mchange",
+          "artifact_id": "c3p0",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "C3p0JndiChain"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "MchangeC3p0Jndi2",
+      "pre_tags": [
+        "SpecialPublicMethod"
+      ],
+      "next_tags": [
+        "Getter"
+      ]
+    },
+    {
+      "id": "CHAIN-0164",
+      "name": "ModeShape JDBC URL",
+      "aliases": [],
+      "description": "适用于jdbc rce场景，jdbc利用可以转为jndi注入利用",
+      "dependencies": [
+        {
+          "group_id": "modeshape",
+          "artifact_id": "org.modeshape.jdbc.LocalJcrDriver",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "ModeShapeJdbcUrl"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "ModeShapeJdbc",
+      "pre_tags": [
+        "JdbcUrlChains"
+      ]
+    },
+    {
+      "id": "CHAIN-0165",
+      "name": "修改ShiroKey",
+      "aliases": [],
+      "description": "修改 Shiro key 字节码",
+      "dependencies": [],
+      "tags": [],
+      "jdk_version": "any",
+      "gadget_class": "ModifyShiroKey"
+    },
+    {
+      "id": "CHAIN-0166",
+      "name": "MozillaRhino1 RCE",
+      "aliases": [],
+      "description": "调用任意方法",
+      "dependencies": [
+        {
+          "group_id": "rhino",
+          "artifact_id": "js",
+          "version": "1.7R2",
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "JavaNativeDeserialize"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "MozillaRhino1",
+      "pre_tags": [
+        "TemplatesImplChain"
+      ],
+      "next_tags": [
+        "RMIConnectorChain"
+      ]
+    },
+    {
+      "id": "CHAIN-0167",
+      "name": "MVEL RCE",
+      "aliases": [],
+      "description": "factory: org.apache.naming.factory.BeanFactory",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "JNDI Reference 的一种，通过BeanFactory调用单String方法：org.mvel2.sh.ShellSession#exec() 执行任意MVEL表达式",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "tomcat"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "MvelRef",
+      "pre_tags": [
+        "org.mvel:mvel2"
+      ],
+      "next_tags": [
+        "ResourceRef"
+      ]
+    },
+    {
+      "id": "CHAIN-0168",
+      "name": "One For All Echo 回显",
+      "aliases": [],
+      "description": "一个 Payload 包含了一些常见中间件的回显：WebLogic、Jetty、Tomcat、Spring",
+      "dependencies": [],
+      "tags": [
+        "Echo"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "OneForAllEcho"
+    },
+    {
+      "id": "CHAIN-0169",
+      "name": "将byte[]字节码转换为Ongl表达式字符串",
+      "aliases": [],
+      "description": "内部嵌套js引擎实现加载任意字节码",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "ognl",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "Ognl<3.1.25"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "OnglConvert",
+      "pre_tags": [
+        "Ognl<3.2.12"
+      ],
+      "next_tags": [
+        "Ongl_Expr"
+      ]
+    },
+    {
+      "id": "CHAIN-0170",
+      "name": "Ongl表达式执行命令",
+      "aliases": [],
+      "description": "简单通过Runtime执行命令",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "ognl",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "Ongl_Expr"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "OnglExec1",
+      "pre_tags": [
+        "Expression"
+      ]
+    },
+    {
+      "id": "CHAIN-0171",
+      "name": "Openguass JDBC URL",
+      "aliases": [],
+      "description": "魔改 PostgreSQL，适用于jdbc rce场景，通过 ClassPathXmlApplicationContext 加载xml，实现执行任意字节码",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "Opengauss < 3.0.0",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "OpenguassSQLJdbcUrl"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "OpengaussJdbc",
+      "pre_tags": [
+        "JdbcUrlChains"
+      ]
+    },
+    {
+      "id": "CHAIN-0172",
+      "name": "Oracle DataSource JNDI",
+      "aliases": [],
+      "description": "oracle.jdbc.rowset.OracleJDBCRowSet",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "需要Getter触发",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        },
+        {
+          "group_id": null,
+          "artifact_id": "fj可能触发不到getConnection就退出了，用cb最好",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "oracle"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "OracleCachedRowSet",
+      "pre_tags": [
+        "DataSourceChains"
+      ],
+      "next_tags": [
+        "Getter"
+      ]
+    },
+    {
+      "id": "CHAIN-0173",
+      "name": "通过Sleep判断目标操作系统",
+      "aliases": [],
+      "description": "Bytecode",
+      "dependencies": [],
+      "tags": [],
+      "jdk_version": "any",
+      "gadget_class": "OsSleep"
+    },
+    {
+      "id": "CHAIN-0174",
+      "name": "PostgreSqlDataSource PostgreSQL JDBC URL Attack",
+      "aliases": [],
+      "description": "使用postgresql中的 org.postgresql.ds.common.BaseDataSource，可通过getter方法(getConnection)触发此链，转为postgresql jdbc利用",
+      "dependencies": [
+        {
+          "group_id": "org.postgresql",
+          "artifact_id": "postgresql",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "DataSourceChains"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "PostgreSqlDataSource",
+      "pre_tags": [
+        "Getter"
+      ],
+      "next_tags": [
+        "PostgreSQLJdbcUrl"
+      ]
+    },
+    {
+      "id": "CHAIN-0175",
+      "name": "PostgreSQL JDBC 仅适用于JNDI模块",
+      "aliases": [],
+      "description": "注意，本Gadget只适用于在JNDI Exploit 模块中使用",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "适用于jdbc rce场景，通过 ClassPathXmlApplicationContext 加载本地xml，实现执行任意字节码",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "该",
+        "JNDI",
+        "版会自动生成spring",
+        "bean",
+        "xml文件并缓存到",
+        "JNDI",
+        "Exploit",
+        "中，实现自动化利用"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "PostgreSqlJdbc4Jndi",
+      "pre_tags": [
+        "org.postgresql:postgresql:org.postgresql.Driver"
+      ],
+      "next_tags": [
+        "9.4.1208",
+        "<=",
+        "org.postgresql:postgresql",
+        "<42.2.25"
+      ]
+    },
+    {
+      "id": "CHAIN-0176",
+      "name": "PropertiesConfiguration 不完美的远程文件下载/读取2",
+      "aliases": [],
+      "description": "factory: org.apache.naming.factory.BeanFactory",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "通过BeanFactory调用单String方法：org.apache.commons.configuration2.PropertiesConfiguration#save 实现文件下载/读取",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "tomcat"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "PropertiesConfigurationRef2",
+      "pre_tags": [
+        "commons-configuration2"
+      ],
+      "next_tags": [
+        "ResourceRef"
+      ]
+    },
+    {
+      "id": "CHAIN-0177",
+      "name": "加载LazyValue相关链",
+      "aliases": [],
+      "description": "使用 UIDefaults.ProxyLazyValue 加载 LazyValue 相关链, 能够调用任意类的任意方法",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "jdk",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "HessianDeserialize"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "ProxyLazyValueUIDefaults",
+      "pre_tags": [
+        "LazyValueChain"
+      ],
+      "next_tags": [
+        "ProxyLazyValueXString"
+      ]
+    },
+    {
+      "id": "CHAIN-0178",
+      "name": "ResourceFactoryBypass",
+      "aliases": [],
+      "description": "factory: org.apache.naming.factory.ResourceFactory",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "如果系统环境变量不存在",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        },
+        {
+          "group_id": null,
+          "artifact_id": "则会默认使用 org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory，最终实现实现JDBC的利用",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "tomcat-dbcp2"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "ResourceFactoryBypass",
+      "pre_tags": [
+        "ResourceRef"
+      ],
+      "next_tags": [
+        "JdbcUrlChains"
+      ]
+    },
+    {
+      "id": "CHAIN-0179",
+      "name": "RMIConnector二次反序列化",
+      "aliases": [],
+      "description": "通过connect()方法触发本链，实现二次反序列化",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "这个触发点比较特殊既不是getter类方法，也不是toString、equals等特殊方法，所以适用于在特定场合绕过一些检测",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "jdk:javax.management.remote.rmi.RMIConnector"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "RMIConnector",
+      "pre_tags": [
+        "RMIConnectorChain"
+      ],
+      "next_tags": [
+        "SpecialPublicMethod"
+      ]
+    },
+    {
+      "id": "CHAIN-0180",
+      "name": "生成使用dnslog探测中间件的字节码",
+      "aliases": [],
+      "description": "Bytecode",
+      "dependencies": [],
+      "tags": [],
+      "jdk_version": "any",
+      "gadget_class": "ServerInfoHttpDnsLog"
+    },
+    {
+      "id": "CHAIN-0181",
+      "name": "Shiro下字节码分离加载",
+      "aliases": [],
+      "description": "适用于Shiro环境下字节码长度限制",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "注意为了减少特征",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        },
+        {
+          "group_id": null,
+          "artifact_id": "字节码中的 yv66vg 头部已在程序中指定",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        },
+        {
+          "group_id": null,
+          "artifact_id": "在请求参数中携带字节码请求时需要去除这部分字符串",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        },
+        {
+          "group_id": null,
+          "artifact_id": "并且需要对base64字符串进行url编码",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "Bytecode"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "ShiroClassLoader",
+      "pre_tags": [
+        "Spring"
+      ]
+    },
+    {
+      "id": "CHAIN-0182",
+      "name": "Shiro下字节码分离加载2",
+      "aliases": [],
+      "description": "适用于Shiro环境下字节码长度限制, POST传入字节码参数时，需要对base64字符串进行url编码",
+      "dependencies": [],
+      "tags": [
+        "Spring"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "ShiroClassLoader2"
+    },
+    {
+      "id": "CHAIN-0183",
+      "name": "SignedObject二次反序列化",
+      "aliases": [],
+      "description": "getObject()方法触发本链，实现Java原生的二次反序列化",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "Java序列化数据以字节流形式存放，所以能绕过一些黑名单",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "以及适用于",
+        "Hessian",
+        "反序列化中，能够建立与Java原生反序列化的桥梁，能够绕过Hessian反序列化中",
+        "TemplatesImpl",
+        "的限制"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "SignedObject",
+      "pre_tags": [
+        "jdk:java.security.SignedObject"
+      ],
+      "next_tags": [
+        "SignedObjectChain"
+      ]
+    },
+    {
+      "id": "CHAIN-0184",
+      "name": "生成SnakeYaml 二次反序列化Payload",
+      "aliases": [],
+      "description": "通过 com.mchange.v2.c3p0.WrapperConnectionPoolDataSource 实现二次反序列化",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "snakeyaml",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "c3p0"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "SnakeyamlC3p0",
+      "pre_tags": [
+        "SnakeYaml_Expr"
+      ],
+      "next_tags": [
+        "Expression"
+      ]
+    },
+    {
+      "id": "CHAIN-0185",
+      "name": "将字节码转为SnakeYaml Jar包字节流",
+      "aliases": [],
+      "description": "适用于SnakeYaml远程加载Jar包 RCE，会自动创建 META-INF/services/javax.script.ScriptEngineFactory 文件，并将文件内容设置为字节码名称",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "snakeyaml",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "SnakeYamlJAR"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "SnakeyamlJarConvert",
+      "pre_tags": [
+        "Other"
+      ],
+      "next_tags": [
+        "BytecodeConvertTag"
+      ]
+    },
+    {
+      "id": "CHAIN-0186",
+      "name": "SnakeYaml远程加载JAR包 仅适用于JNDI模块",
+      "aliases": [],
+      "description": "注意，本Gadget只适用于在JNDI Chains Exploit 模块中使用",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "利用SPI机制，基于ScriptEngineManager利用链，远程加载特定的jar包，实现任意字节码执行",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "该",
+        "JNDI",
+        "版会自动缓存jar包到JNDI服务器中的HTTP",
+        "Server中，并自动设置",
+        "http",
+        "请求路径，实现自动化利用"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "SnakeyamlJarSpi4JNDI",
+      "pre_tags": [
+        "snakeyaml"
+      ],
+      "next_tags": [
+        "SnakeYaml_Expr"
+      ]
+    },
+    {
+      "id": "CHAIN-0187",
+      "name": "生成SnakeYaml Jndi注入 Payload",
+      "aliases": [],
+      "description": "通过 org.springframework.jndi.support.SimpleJndiBeanFactory 实现jndi注入",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "snakeyaml",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "spring-bean"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "SnakeyamlJndi2",
+      "pre_tags": [
+        "SnakeYaml_Expr"
+      ],
+      "next_tags": [
+        "Expression"
+      ]
+    },
+    {
+      "id": "CHAIN-0188",
+      "name": "SnakeYaml 远程加载jar包 RCE",
+      "aliases": [],
+      "description": "factory: org.apache.naming.factory.BeanFactory",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "JNDI Reference的一种，通过BeanFactory调用单String方法：org.yaml.snakeyaml.Yaml#load，通过SnakeYaml远程加载jar包",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "snakeyaml",
+        "1.33",
+        "版本测试成功，2.0和2.2版本测试失败"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "SnakeyamlRef",
+      "pre_tags": [
+        "tomcat"
+      ],
+      "next_tags": [
+        "snakeyaml:1.33"
+      ]
+    },
+    {
+      "id": "CHAIN-0189",
+      "name": "spring bean.xml 执行任意 SpEL 表达式",
+      "aliases": [],
+      "description": "适用于ClassPathXmlApplicationContext加载xml文件场景",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "spring-bean",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "spel"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "SpringBeanXmlSpEL",
+      "pre_tags": [
+        "Other"
+      ],
+      "next_tags": [
+        "SpEL_Expr"
+      ]
+    },
+    {
+      "id": "CHAIN-0190",
+      "name": "向外发起JNDI连接，推荐使用",
+      "aliases": [],
+      "description": "利用 spring 中的 org.springframework.jndi.support.SimpleJndiBeanFactory 发起JNDI请求",
+      "dependencies": [
+        {
+          "group_id": "org.springframework",
+          "artifact_id": "spring-context",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "HessianSpringChains"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "SpringJndi1"
+    },
+    {
+      "id": "CHAIN-0191",
+      "name": "执行linux命令",
+      "aliases": [],
+      "description": "通过 org.springframework.beans.factory.config.MethodInvokingFactoryBean 实现调用任意方法",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "本链调用 java.lang.Runtime.getRuntime 实现命令执行",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "本链执行模板:",
+        "bash",
+        "-c",
+        "'cmd'"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "SpringLinuxExec",
+      "pre_tags": [
+        "org.springframework:spring-context"
+      ],
+      "next_tags": [
+        "HessianSpringChains"
+      ]
+    },
+    {
+      "id": "CHAIN-0192",
+      "name": "Spring字节码加载",
+      "aliases": [],
+      "description": "从指定参数中获取字节码并加载",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "spring",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "Bytecode"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "SpringLoaderFromParam",
+      "pre_tags": [
+        "Spring"
+      ]
+    },
+    {
+      "id": "CHAIN-0193",
+      "name": "加载目标的jar包进行任意函数调用",
+      "aliases": [],
+      "description": "通过 org.springframework.beans.factory.config.MethodInvokingFactoryBean 实现调用任意方法",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "本链调用 sun.security.tools.keytool.Main 实现加载目标本地jar包的某个类",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "需要配合文件上传漏洞(SpringUpload链)实现RCE"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "SpringLoadJar",
+      "pre_tags": [
+        "org.springframework:spring-context"
+      ],
+      "next_tags": [
+        "HessianSpringChains"
+      ]
+    },
+    {
+      "id": "CHAIN-0194",
+      "name": "Spring JNDI链",
+      "aliases": [],
+      "description": "org.springframework:spring-context",
+      "dependencies": [
+        {
+          "group_id": "org.springframework",
+          "artifact_id": "spring-aop",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "HessianDeserialize"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "SpringPartiallyComparableAdvisorHolder",
+      "pre_tags": [
+        "SpringJndi1"
+      ],
+      "next_tags": [
+        "SpringUpload"
+      ]
+    },
+    {
+      "id": "CHAIN-0195",
+      "name": "Sqlite JDBC URL",
+      "aliases": [],
+      "description": "sqlite jdbc利用可以转为SSRF",
+      "dependencies": [
+        {
+          "group_id": "sqlite",
+          "artifact_id": "org.sqlite.JDBC",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "SqliteJdbcUrl"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "SqliteJdbc",
+      "pre_tags": [
+        "JdbcUrlChains"
+      ]
+    },
+    {
+      "id": "CHAIN-0196",
+      "name": "指定目录文件写入文件",
+      "aliases": [],
+      "description": "org.aspectj:aspectjweaver:1.9.2",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "StoreableCachingMap",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [],
+      "jdk_version": "any",
+      "gadget_class": "StoreableCachingMap"
+    },
+    {
+      "id": "CHAIN-0197",
+      "name": "MethodUtil JDK原生链",
+      "aliases": [],
+      "description": "本链利用 sun.reflect.misc.MethodUtil 通过调用 Unsafe的defineAnonymousClass 方法加载任意字节码，实现原生JDK RCE，但是JDK可能会崩，实战慎用",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "jdk < 11",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "HessianDeserialize"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "SwingLazyValueMethodUtil",
+      "pre_tags": [
+        "BytecodeConvertTag"
+      ],
+      "next_tags": [
+        "SwingLazyValueUIDefaults"
+      ]
+    },
+    {
+      "id": "CHAIN-0198",
+      "name": "写库文件和加载动态链接库的代码执行链",
+      "aliases": [],
+      "description": "使用JavaUtils写入dylib文件，之后再配合System.load进行加载动态链接库，实现任意代码执行",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "优先使用Base64编码",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "only",
+        "jdk"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "SystemLoad",
+      "pre_tags": [
+        "HessianDeserialize"
+      ]
+    },
+    {
+      "id": "CHAIN-0199",
+      "name": "发起Tcp请求",
+      "aliases": [],
+      "description": "用于判断tcp协议是否出网",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "ncat -lvp 9999",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "Bytecode"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "TcpConnect"
+    },
+    {
+      "id": "CHAIN-0200",
+      "name": "TemplatesImpl加载字节码",
+      "aliases": [],
+      "description": "加载的字节码会被自动设置为继承 AbstractTranslet 类",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "不适用于高版本JDK，例如 JDK 17",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "Hessian",
+        "反序列化下的部分场景无法使用"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "TemplatesImpl",
+      "pre_tags": [
+        "jdk",
+        "<",
+        "17"
+      ],
+      "next_tags": [
+        "TemplatesImplChain"
+      ]
+    },
+    {
+      "id": "CHAIN-0201",
+      "name": "调用toString",
+      "aliases": [],
+      "description": "HashMap#readObject() -> HashMap#putVal() -> AbstractMap.equals() -> TextAndMnemonicHashMap#toString() 后续可以调用任意对象的 toString() 方法",
+      "dependencies": [
+        {
+          "group_id": "jdk",
+          "artifact_id": "javax.swing.UIDefaults$TextAndMnemonicHashMap",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "JavaNativeDeserialize"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "TextAndMnemonicHashMapToString",
+      "pre_tags": [
+        "ToString"
+      ],
+      "next_tags": [
+        "TextAndMnemonicHashMapToStringHighJDK"
+      ]
+    },
+    {
+      "id": "CHAIN-0202",
+      "name": "TomcatDbcp2DataSource JNDI",
+      "aliases": [],
+      "description": "tomcat中的dbcp，可通过getter方法(getConnection)触发此链，转为jndi利用",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "org.apache.tomcat.dbcp.dbcp2.datasources.SharedPoolDataSource",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "org.apache.tomcat:tomcat-dbcp",
+        ">=",
+        "8"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "TomcatDbcp2DataSource",
+      "pre_tags": [
+        "DataSourceChains"
+      ],
+      "next_tags": [
+        "SpecialPublicMethod"
+      ]
+    },
+    {
+      "id": "CHAIN-0203",
+      "name": "TomcatDbcp2DataSource2 JNDI",
+      "aliases": [],
+      "description": "tomcat中的dbcp，可通过getter方法(getConnection)触发此链，转为jndi利用",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "org.apache.tomcat.dbcp.dbcp2.datasources.PerUserPoolDataSource",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "org.apache.tomcat:tomcat-dbcp",
+        ">=",
+        "8"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "TomcatDbcp2DataSource2",
+      "pre_tags": [
+        "DataSourceChains"
+      ],
+      "next_tags": [
+        "SpecialPublicMethod"
+      ]
+    },
+    {
+      "id": "CHAIN-0204",
+      "name": "Tomcat dbcp2 加载jdbc，转为jdbc url利用",
+      "aliases": [],
+      "description": "factory: org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "tomcat-dbcp2",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "Reference"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "TomcatDbcp2JdbcAttack",
+      "pre_tags": [
+        "JdbcUrlChains"
+      ],
+      "next_tags": [
+        "JdbcUrlWithSQLChains"
+      ]
+    },
+    {
+      "id": "CHAIN-0205",
+      "name": "TomcatDbcpDataSource2 JNDI",
+      "aliases": [],
+      "description": "tomcat中的dbcp，可通过getter 方法(getConnection)触发此链，转为jndi利用",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "org.apache.tomcat.dbcp.dbcp2.datasources.PerUserPoolDataSource",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "org.apache.tomcat:tomcat-dbcp",
+        "<",
+        "8"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "TomcatDbcpDataSource2",
+      "pre_tags": [
+        "DataSourceChains"
+      ],
+      "next_tags": [
+        "SpecialPublicMethod"
+      ]
+    },
+    {
+      "id": "CHAIN-0206",
+      "name": "Tomcat dbcp1 加载jdbc，转为jdbc url利用",
+      "aliases": [],
+      "description": "factory: org.apache.tomcat.dbcp.dbcp.BasicDataSourceFactory",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "tomcat-dbcp",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "Reference"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "TomcatDbcpJdbcAttack",
+      "pre_tags": [
+        "JdbcUrlChains"
+      ],
+      "next_tags": [
+        "JdbcUrlWithSQLChains"
+      ]
+    },
+    {
+      "id": "CHAIN-0207",
+      "name": "生成 Tomcat 命令执行明文回显的字节码 2",
+      "aliases": [],
+      "description": "Tomcat/JBoss/BES 中间件可使用当前进行回显",
+      "dependencies": [],
+      "tags": [
+        "Echo"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "TomcatEcho2"
+    },
+    {
+      "id": "CHAIN-0208",
+      "name": "El RCE",
+      "aliases": [],
+      "description": "factory: org.apache.naming.factory.BeanFactory",
+      "dependencies": [
+        {
+          "group_id": "JNDI Reference的一种，通过BeanFactory调用单String方法",
+          "artifact_id": " javax.el.ELProcessor#eval() 执行任意El表达式，较常规的姿势",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "注意",
+        "tomcat7",
+        "不存在el依赖，也就无法利用"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "TomcatElRef",
+      "pre_tags": [
+        "tomcat"
+      ],
+      "next_tags": [
+        "tomcat-el"
+      ]
+    },
+    {
+      "id": "CHAIN-0209",
+      "name": "Tomcat jdbc 加载jdbc，转为jdbc url利用",
+      "aliases": [],
+      "description": "factory: org.apache.tomcat.jdbc.pool.DataSourceFactory",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "注意加载sql时只能加载一条",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "tomcat-jdbc"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "TomcatJDBCJdbcAttack",
+      "pre_tags": [
+        "Reference"
+      ],
+      "next_tags": [
+        "JdbcUrlChains"
+      ]
+    },
+    {
+      "id": "CHAIN-0210",
+      "name": "CC Transform链加载BCEL",
+      "aliases": [],
+      "description": "使用 com.sun.org.apache.bcel.internal.util.ClassLoader 加载BCEL字节码",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "<=commons-collections 3.2.1",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "or",
+        "<=commons-collections",
+        "4.0"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "TransformerWithBcel",
+      "pre_tags": [
+        "jdk",
+        "<",
+        "8u251"
+      ],
+      "next_tags": [
+        "TransformerChains"
+      ]
+    },
+    {
+      "id": "CHAIN-0211",
+      "name": "写文件",
+      "aliases": [],
+      "description": "<=commons-collections 3.2.1",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "<=commons-collections 4.0",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "TransformerChains"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "TransformerWithFileWrite"
+    },
+    {
+      "id": "CHAIN-0212",
+      "name": "向外发起jndi连接",
+      "aliases": [],
+      "description": "<=commons-collections 3.2.1",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "<=commons-collections 4.0",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "TransformerChains"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "TransformerWithJNDI",
+      "pre_tags": [
+        "JdbcRowSetImplChain"
+      ],
+      "next_tags": [
+        "TransformerWithJs"
+      ]
+    },
+    {
+      "id": "CHAIN-0213",
+      "name": "TemplateImpl执行字节码",
+      "aliases": [],
+      "description": "执行后，执行任意代码，依赖TemplatesImpl",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "<=commons-collections 3.2.1",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "<=commons-collections",
+        "4.0"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "TransformerWithTemplatesImpl",
+      "pre_tags": [
+        "TransformerChains"
+      ],
+      "next_tags": [
+        "TemplatesImplChain"
+      ]
+    },
+    {
+      "id": "CHAIN-0214",
+      "name": "使用Spring动态代理处理TemplatesImpl",
+      "aliases": [],
+      "description": "使用 JdkDynamicAopProxy 类，解决Jackson调用时TemplatesImpl的不稳定问题",
+      "dependencies": [
+        {
+          "group_id": "spring-aop",
+          "artifact_id": "org.springframework.aop.framework.JdkDynamicAopProxy",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "TemplatesImplWrapperChain"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "TWrap",
+      "pre_tags": [
+        "JavaGetter"
+      ],
+      "next_tags": [
+        "Getter"
+      ]
+    },
+    {
+      "id": "CHAIN-0215",
+      "name": "生成 Undertow 命令执行明文回显的字节码",
+      "aliases": [],
+      "description": "JBossEAP7/WildFly 中间件可使用当前进行回显",
+      "dependencies": [],
+      "tags": [
+        "Echo"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "UndertowEcho"
+    },
+    {
+      "id": "CHAIN-0216",
+      "name": "UnicastRef2",
+      "aliases": [],
+      "description": "sun.rmi.server.UnicastRef2 配合 JRMPListener 进行RCE",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "jdk",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "AmfDeserialize"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "UnicastRef2Gadget"
+    },
+    {
+      "id": "CHAIN-0217",
+      "name": "UnicastRef",
+      "aliases": [],
+      "description": "sun.rmi.server.UnicastRef 配合 JRMPListener 进行RCE",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "jdk",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "AmfDeserialize"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "UnicastRefGadget"
+    },
+    {
+      "id": "CHAIN-0218",
+      "name": "UnixPrintService 命令注入",
+      "aliases": [],
+      "description": "该类未实现 Serializable，只适用于Hessian反序列化 并且只适用于unix/linux",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "jdk高版本移除此类",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "通过getter方法触发命令注入"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "UnixPrintService",
+      "pre_tags": [
+        "本地测试",
+        "zulu8u345",
+        "存在此类"
+      ],
+      "next_tags": [
+        "linux"
+      ]
+    },
+    {
+      "id": "CHAIN-0219",
+      "name": "UnixPrintServiceLookup 命令注入",
+      "aliases": [],
+      "description": "该类未实现 Serializable，只适用于Hessian反序列化 并且只适用于unix/linux",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "jdk高版本移除此类",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "通过getter方法触发命令注入"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "UnixPrintServiceLookup",
+      "pre_tags": [
+        "本地测试",
+        "zulu8u345",
+        "不存在此类"
+      ],
+      "next_tags": [
+        "linux"
+      ]
+    },
+    {
+      "id": "CHAIN-0220",
+      "name": "getter方法调用本链发起DNS请求",
+      "aliases": [],
+      "description": "需调用 getContent() 方法触发此链, 使用了 java.net.URL 类, 可以用来辅助判断高版本JDK",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "jdk",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "SpecialPublicMethod"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "URL4Getter",
+      "pre_tags": [
+        "JavaGetter"
+      ],
+      "next_tags": [
+        "Getter"
+      ]
+    },
+    {
+      "id": "CHAIN-0221",
+      "name": "发起DNS请求",
+      "aliases": [],
+      "description": "用来判断是否存在Java反序列化点，以及判断DNS是否出网",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "JavaNativeDeserialize",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [],
+      "jdk_version": "any",
+      "gadget_class": "URLDNS"
+    },
+    {
+      "id": "CHAIN-0222",
+      "name": "自定义表达式字符串",
+      "aliases": [],
+      "description": "BCEL_Expr",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "Beanshell_Expr",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "Groovy_Expr"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "UserCustomExpr",
+      "pre_tags": [
+        "SpEL_Expr"
+      ],
+      "next_tags": [
+        "Js_Expr"
+      ]
+    },
+    {
+      "id": "CHAIN-0223",
+      "name": "自定义Java反序列化数据",
+      "aliases": [],
+      "description": "可自定义传入Base64格式的Java序列化数据，用于一些二次反序列化场合",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "Other",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "CustomJavaDeserialize"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "UserCustomSerializeData"
+    },
+    {
+      "id": "CHAIN-0224",
+      "name": "Vaadin1",
+      "aliases": [],
+      "description": "com.vaadin:vaadin-server:7.7.14",
+      "dependencies": [
+        {
+          "group_id": "com.vaadin",
+          "artifact_id": "vaadin-shared",
+          "version": "7.7.14",
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "JavaNativeDeserialize"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "Vaadin1",
+      "pre_tags": [
+        "TemplatesImplChain"
+      ],
+      "next_tags": [
+        "VelocityConvert"
+      ]
+    },
+    {
+      "id": "CHAIN-0225",
+      "name": "生成 WebLogic 命令执行明文回显的字节码",
+      "aliases": [],
+      "description": "Bytecode",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "Echo",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [],
+      "jdk_version": "any",
+      "gadget_class": "WebLogicEcho"
+    },
+    {
+      "id": "CHAIN-0226",
+      "name": "生成 WebSphere 命令执行明文回显的字节码",
+      "aliases": [],
+      "description": "暂未适配 WAS7，已适配 WAS8/9",
+      "dependencies": [],
+      "tags": [
+        "Echo"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "WebSphereEcho"
+    },
+    {
+      "id": "CHAIN-0227",
+      "name": "Wicket1",
+      "aliases": [],
+      "description": "上传的文件名不可控(eg: upload_3805815b_2d50_4e00_9dae_a854d5a0e614_479431761.tmp), 仅可控文件目录和文件内容",
+      "dependencies": [
+        {
+          "group_id": "org.apache.wicket",
+          "artifact_id": "wicket-util",
+          "version": "6.23.0",
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "org.slf4j:slf4j-api:1.6.4"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "Wicket1",
+      "pre_tags": [
+        "JavaNativeDeserialize"
+      ]
+    },
+    {
+      "id": "CHAIN-0228",
+      "name": "WildFly JNDI",
+      "aliases": [],
+      "description": "org.wildfly:wildfly-connector:26.0.1.Final",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "JavaNativeDeserialize",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [],
+      "jdk_version": "any",
+      "gadget_class": "WildFly"
+    },
+    {
+      "id": "CHAIN-0229",
+      "name": "写入二进制文件并执行",
+      "aliases": [],
+      "description": "写入二进制文件,会从本地读取文件，经过gzip、base64后存放到字节码中,然后调用命令去执行文件",
+      "dependencies": [],
+      "tags": [],
+      "jdk_version": "any",
+      "gadget_class": "WriteFileExec"
+    },
+    {
+      "id": "CHAIN-0230",
+      "name": "写入大文件/二进制文件",
+      "aliases": [],
+      "description": "写入大文件或二进制文件, 会从本地读取文件，经过gzip、base64后存放到字节码中",
+      "dependencies": [],
+      "tags": [],
+      "jdk_version": "any",
+      "gadget_class": "WriteLargeFile"
+    },
+    {
+      "id": "CHAIN-0231",
+      "name": "Xalan XString 调用toString链",
+      "aliases": [],
+      "description": "HashMap#readObject => HotSwappableTargetSource#equals => XString#equals 后续可以调用任意对象的 toString() 方法",
+      "dependencies": [
+        {
+          "group_id": "spring-aop",
+          "artifact_id": "org.springframework.aop.target.HotSwappableTargetSource",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "xalan:xalan:2.6.0"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "XalanXString1",
+      "pre_tags": [
+        "JavaNativeDeserialize"
+      ],
+      "next_tags": [
+        "HessianDeserialize"
+      ]
+    },
+    {
+      "id": "CHAIN-0232",
+      "name": "命令执行",
+      "aliases": [],
+      "description": "通过 Runtime.getRuntime().exec() 执行命令",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "jdk",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "XMLDecoderPayload"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "XMLExec"
+    },
+    {
+      "id": "CHAIN-0233",
+      "name": "ClassLoader defineClass 加载字节码",
+      "aliases": [],
+      "description": "jdk",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "XMLDecoderPayload",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "BytecodeConvertTag"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "XMLJdkDefineClass",
+      "pre_tags": [
+        "XMLJNDI"
+      ],
+      "next_tags": [
+        "JdbcRowSetImpl",
+        "JNDI"
+      ]
+    },
+    {
+      "id": "CHAIN-0234",
+      "name": "通过 js 加载字节码",
+      "aliases": [],
+      "description": "jdk",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "XMLDecoderPayload",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "BytecodeConvertTag"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "XMLJsLoader",
+      "pre_tags": [
+        "XMLSleep"
+      ],
+      "next_tags": [
+        "服务器延迟"
+      ]
+    },
+    {
+      "id": "CHAIN-0235",
+      "name": "Xslt整合链2 一键通过js实现代码执行",
+      "aliases": [],
+      "description": "使用JavaUtils写xml文件，之后再调用Process函数解析进行任意代码执行，使用JS表达式来执行",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "不同于Xslt1链，本链使用Js来执行，不依赖Spring环境",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "注意执行后会在指定目录下残留两个文件"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "XsltOnlyJdk",
+      "pre_tags": [
+        "此链可重复执行，会覆盖之前的Payload文件"
+      ],
+      "next_tags": [
+        "jdk<11"
+      ]
+    },
+    {
+      "id": "CHAIN-0236",
+      "name": "Xslt整合链 一键代码执行",
+      "aliases": [],
+      "description": "使用JavaUtils写xml文件，之后再调用Process函数解析进行任意代码执行",
+      "dependencies": [
+        {
+          "group_id": null,
+          "artifact_id": "可适用于Nacos7848端口RCE场景，但是需要额外的MetadataOperation对象封装，否则该洞导致只能打一次",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "converted_from_gadgets_json"
+          }
+        }
+      ],
+      "tags": [
+        "注意这里依赖Spring方法：org.springframework.cglib.core.ReflectUtils"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "XsltSpring",
+      "pre_tags": [
+        "注意执行后会在指定目录下残留两个文件。此链可重复执行，会覆盖之前的Payload文件"
+      ],
+      "next_tags": [
+        "spring-core"
+      ]
+    }
+  ],
+  "metadata": {
+    "dependency_rules": 21,
+    "verification_method": "rule_based + heuristic + context_inference"
+  }
+}
