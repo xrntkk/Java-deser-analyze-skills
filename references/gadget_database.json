@@ -1761,8 +1761,18 @@
       "id": "CHAIN-0067",
       "name": "AspectJ链指定目录文件写入文件",
       "aliases": [],
-      "description": "1.9.4不存在",
+      "description": "通过SimpleCache$StoreableCachingMap实现任意文件写入。可用于上传JSP Webshell实现RCE，或覆盖配置文件（如application.properties、logback.xml）实现代码执行。1.9.4版本不存在此漏洞。",
       "dependencies": [
+        {
+          "group_id": "org.aspectj",
+          "artifact_id": "aspectjweaver",
+          "version": null,
+          "version_constraint": "!=1.9.4",
+          "_inference": {
+            "confidence": "high",
+            "method": "fixed_missing_aspectj_dependency"
+          }
+        },
         {
           "group_id": "commons-collections",
           "artifact_id": "commons-collections",
@@ -1775,7 +1785,10 @@
         }
       ],
       "tags": [
-        "JavaNativeDeserialize"
+        "JavaNativeDeserialize",
+        "FileWrite",
+        "RCE",
+        "WebshellUpload"
       ],
       "jdk_version": "any",
       "gadget_class": "AspectJWeaver",
@@ -3774,21 +3787,21 @@
       "id": "CHAIN-0141",
       "name": "Jackson反序列化链",
       "aliases": [],
-      "description": "BadAttributeValueExpException#readObject() => POJONode#toString() => getter，会不定顺序调用对象*所有字段*中的getter方法",
+      "description": "BadAttributeValueExpException#readObject() => POJONode#toString() => getter，会不定顺序调用对象*所有字段*中的getter方法。此链不稳定，因为获取的顺序会有一定的不稳定性，有时 outputProperties 会在 stylesheetDOM 之前，这个时候反序列化攻击可以成功",
       "dependencies": [
         {
-          "group_id": null,
-          "artifact_id": "此链不稳定，因为获取的顺序会有一定的不稳定性，有时 outputProperties 会在 stylesheetDOM 之前，这个时候反序列化攻击可以成功",
+          "group_id": "com.fasterxml.jackson.core",
+          "artifact_id": "jackson-databind",
           "version": null,
-          "version_constraint": null,
+          "version_constraint": ">=2.9.0",
           "_inference": {
-            "confidence": "medium",
-            "method": "converted_from_gadgets_json"
+            "confidence": "high",
+            "method": "fixed_missing_jackson_dependency"
           }
         }
       ],
       "tags": [
-        "com.fasterxml.jackson.core:jackson-databind>2.9"
+        "JavaNativeDeserialize"
       ],
       "jdk_version": "any",
       "gadget_class": "Jackson",
@@ -5115,24 +5128,22 @@
       "id": "CHAIN-0191",
       "name": "执行linux命令",
       "aliases": [],
-      "description": "通过 org.springframework.beans.factory.config.MethodInvokingFactoryBean 实现调用任意方法",
+      "description": "通过 org.springframework.beans.factory.config.MethodInvokingFactoryBean 实现调用任意方法。本链调用 java.lang.Runtime.getRuntime 实现命令执行",
       "dependencies": [
         {
-          "group_id": null,
-          "artifact_id": "本链调用 java.lang.Runtime.getRuntime 实现命令执行",
+          "group_id": "org.springframework",
+          "artifact_id": "spring-context",
           "version": null,
           "version_constraint": null,
           "_inference": {
-            "confidence": "medium",
-            "method": "converted_from_gadgets_json"
+            "confidence": "high",
+            "method": "fixed_missing_spring_dependency"
           }
         }
       ],
       "tags": [
-        "本链执行模板:",
-        "bash",
-        "-c",
-        "'cmd'"
+        "RCE",
+        "CommandExecution"
       ],
       "jdk_version": "any",
       "gadget_class": "SpringLinuxExec",
@@ -5150,18 +5161,19 @@
       "description": "从指定参数中获取字节码并加载",
       "dependencies": [
         {
-          "group_id": null,
-          "artifact_id": "spring",
+          "group_id": "org.springframework",
+          "artifact_id": "spring-core",
           "version": null,
           "version_constraint": null,
           "_inference": {
-            "confidence": "medium",
-            "method": "converted_from_gadgets_json"
+            "confidence": "high",
+            "method": "fixed_missing_spring_dependency"
           }
         }
       ],
       "tags": [
-        "Bytecode"
+        "Bytecode",
+        "ClassLoader"
       ],
       "jdk_version": "any",
       "gadget_class": "SpringLoaderFromParam",
@@ -5173,21 +5185,23 @@
       "id": "CHAIN-0193",
       "name": "加载目标的jar包进行任意函数调用",
       "aliases": [],
-      "description": "通过 org.springframework.beans.factory.config.MethodInvokingFactoryBean 实现调用任意方法",
+      "description": "通过 org.springframework.beans.factory.config.MethodInvokingFactoryBean 实现调用任意方法。本链调用 sun.security.tools.keytool.Main 实现加载目标本地jar包的某个类，需要配合文件上传漏洞(SpringUpload链)实现RCE",
       "dependencies": [
         {
-          "group_id": null,
-          "artifact_id": "本链调用 sun.security.tools.keytool.Main 实现加载目标本地jar包的某个类",
+          "group_id": "org.springframework",
+          "artifact_id": "spring-beans",
           "version": null,
           "version_constraint": null,
           "_inference": {
-            "confidence": "medium",
-            "method": "converted_from_gadgets_json"
+            "confidence": "high",
+            "method": "fixed_missing_spring_dependency"
           }
         }
       ],
       "tags": [
-        "需要配合文件上传漏洞(SpringUpload链)实现RCE"
+        "RCE",
+        "FileUpload",
+        "ClassLoader"
       ],
       "jdk_version": "any",
       "gadget_class": "SpringLoadJar",

