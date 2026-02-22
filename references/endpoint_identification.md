@@ -69,20 +69,32 @@ These are **NOT** vulnerabilities.
 ## Route Discovery Workflow
 
 ```
-1. Run search_deser_endpoints.py
+1. Run search_deser_endpoints.py → get candidate list (report.md)
    ↓
-2. Review detected routes and sinks
+2. LLM reads report.md — for each Route × Sink pair:
+   a. Read controller/handler source file
+   b. Trace user-controlled input → sink
+   c. Classify: ✅ Confirmed / ❌ Dead code / ⚠️ Uncertain
    ↓
-3. For each route:
-   - Trace parameter flow
-   - Check for sanitization/validation
-   - Confirm sink reachability
+3. Fill Attack Surface table in exploit notes (confirmed entries only)
    ↓
 4. If no routes found:
    - Analyze web.xml, struts.xml manually
    - Check application.properties for custom config
    - Look for framework-specific annotations
 ```
+
+### LLM Judgment Checklist (Step 2 Detail)
+
+For each route entry in the script output:
+
+| Check | Question | Action |
+|-------|----------|--------|
+| **Reachability** | Is the method public and mapped? | Read controller class, confirm annotation |
+| **Source** | Does a user-controlled param reach the sink? | Trace: `request.getBody()` / `request.getParam()` → sink |
+| **No sanitization** | Is input deserialized without type check first? | Look for `instanceof`, `getClass()`, blacklist checks before sink |
+| **Not test code** | Is the file under `src/main/`, not `src/test/`? | Check file path |
+| **Not internal** | Is the sink called only from this route, not from internal schedulers? | Search call sites |
 
 ## Common False Positives
 
